@@ -20,3 +20,15 @@ A branch is an alternate version of a repo that braches from the base repo.
 These are used to make changes without disturbing the main project.
 
 To creat a branch you use git branch $BRANCH_NAME and git checkout $BRANCH_NAME to switch between branches.
+Note that the base version of your repo is the master branch (git checkout master).
+
+Merging Branches:
+
+Once you are ready to merge two branches together (a side branch and the master branch, for example) you
+
+1) Switch to the branch you want to keep (like the master branch)
+2) Use git merge $SECOND_BRANCH_NAME to merge the two branches together (there can be issues with this)
+3) Use git branch -d $SECOND_BRANCH_NAME to delete the branch that was merged if you don't need it anymore.
+
+The issues with merge arise if both changed the same file. To fix this, you edit the file on the branch you 
+want to be merged and then commit those changes.
