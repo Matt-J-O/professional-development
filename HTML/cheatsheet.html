@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>HTML Cheatsheet</title>
+    <link rel="stylesheet" href="cheatsheet.css">
+    <link rel="icon" type="image/x-icon" href="https://static.wikia.nocookie.net/wizardoflegend_gamepedia_en/images/b/b1/Prestigious_Diploma.png/revision/latest?cb=20190324002713">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Matthew Owen">
+
+    <!--Turn on refresh for easier updates when adding new info.-->
+    <!--<meta http-equiv="refresh" content="30"> -->
+
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function dragStart(ev) {
+            ev.dataTransfer.setData("text",ev.target.id)
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</head>
+
+<body>
+    <h1>HTML Cheatsheet</h1>
+    <p>This is a guide I'll update to tell me what keywords do/are needed for HTML</p>
+    <hr>
+    <br>
+    <h2>Table of Contents:</h2>
+    <p><a href="#Basics">Super Basics</a></p>
+    <p><a href="#Style">List of Style Elements</a></p>
+    <p><a href="#Forms">Forms and User Inputs</a></p>
+    <p><a href="#Graphics">HTML Canvas and SVG</a></p>
+    <p><a href="#Media">Working with Media Files</a></p>
+    <p><a href="#API">Working with APIs</a></p>
+    <hr><br>
+    <h2 id="Basics">Super Basics</h2>
+    
+    <h3>Title</h3>
+    <p title="This explains the various uses for the title keyword">Defines the title of the webpage (like the name that shows on the tab in Chrome).
+       <br>Title can also be used inside another element, like a paragraph to show a tool-tip on hover, as seen here
+    </p>
+    <hr>
+
+    <h3>Headings</h3>
+    <p>h1, h2, etc. are for different sized headings for text to allow for very basic formatting.</p>
+    <hr>
+
+    <h3>Paragraphs</h3>
+    <p>p writes a paragraph, I think you could also just write the text out, but this seems neater.</p>
+    <hr>
+
+    <h3>Body vs Head</h3>
+    <p>The body contains what's displayed on the screen, like paragraphs and images, while the head contains metadata, like the title of the page.</p>
+    <hr>
+
+    <h3>Hyperlinks</h3>
+    <p>a defines a link where you need to give an href that contains the actual link (href = "link") and then the text that link appears on, like so. </p>
+    <p><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_self"> _self (the default)</a>, <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"> _blank (new tab)</a>,
+         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_parent"> _parent</a>, <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_top"> _top</a>. Parent and Top aren't as important anymore.</p>
+    <p>Note: If you are linking to something on the same website, you don't need to include the whole url, the https: stuff can be dropped.</p>
+    <hr>
+
+    <h3>Images</h3>
+    <p>Images are linked in the following way: img src = "source file" alt="image name", style="width=x; height=y" . Here's a test one below.
+       <br>The src field can be the file location on a server or a url to where the image is hosted.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/800px-HTML5_logo_and_wordmark.svg.png", alt="Test Image", width=150, height=150> 
+    <p>If an image is placed inside of an link tag, clicking the image would send the person to the link.</p>
+    <hr>
+
+    <h3>Image Maps</h3>
+    <img src="https://www.w3schools.com/html/workplace.jpg" alt="Workplace" usemap="#workmap">
+
+    <map name="workmap">
+    <area shape="rect" coords="34,44,270,350" alt="Computer" href="https://en.wikipedia.org/wiki/Computer" target="_blank">
+    <area shape="rect" coords="290,172,333,250" alt="Phone" href="https://en.wikipedia.org/wiki/Telephone" target="_blank">
+    <area shape="circle" coords="337,300,44" alt="Coffee" href="https://en.wikipedia.org/wiki/Coffee" target="_blank">
+    </map>
+    <p>An image map is a image with clickable areas. Idk when I'd use this, but if you look in the code for this, you can see how it's set up cause it's a lot.
+         It's not too bad, but you need to set cordinates in the image for each clickable area.</p>
+    <hr>
+
+    <h3>The Picture Element</h3>
+    <p>To work better with different screen sizes, the picture element can be used to display pictures with the img tag. In the picture element, you declare sources various screen sizes.
+        The would be used save data by loading large image files on small devices, or by loading formats that the device can support. Here is an example of the formatting inside the picture tag.</p>
+    <p>(source media="min-width: Xpx)" srcest="link")</p>
+    <p>(source media="max-width: Ypx)" srcest="link")</p>
+    <p>(img src="link")</p>
+    <hr>
+
+    <h3>Line Breaks</h3>
+    <p>Line Breaks in HTML are done with br. <br>This can be used to make text look cleaner.</p>
+    <hr>
+
+    <h3>Style</h3>
+    <p style="color: palegoldenrod">The style keyword is used in other elements, like paragraphs to edit how they look, like color, font, etc. It's done like 'color:colorname' or 'font-size:14px' </p>
+    <hr>
+
+    <h3>HR</h3>
+    <p>The hr keyword does a horizonal rule, a line, on the screen. There is one between every section of this page.</p>
+    <hr>
+
+    <h3>Pre</h3>
+    <pre style="font-size: 14px;">
+        The pre keyword defines pre-formatted text, so it will actually use the spaces and line breaks you put in your code instead of auto-formatting.
+        It makes it so you can write some nice poetry.
+
+        Or something else in a way that might be easier to read in editor than something with a lot of line break.
+        (Note that this used/uses a different base font for some reason, idk if that'd be fixed with CSS but we'll find out)
+    </pre>
+    <hr>
+
+    <h3>Text formatting</h3>
+    <p>The following are ways to define various text formatting things: 
+        <br><b>b defines bold text</b>, 
+        <br><strong>strong defines strong text (it looks bold but is better for screen readers)</strong>, 
+        <br><i>i defines text in italics</i>,
+        <br><em>em defines text with emphasis (it looks italic but is better for screen readers)</em>,
+        <br><cite>cite</cite> and <address>address</address> are both special keywords for citations and addresses, and they both put text in italics,
+        <br><small>small defines small(er) text</small>,
+        <br><mark>mark defines marked/highlighted text</mark>,
+        <br><del>del defines deleted text (usually done as strike-through)</del>,
+        <br><ins>ins defines inserted text (usually underlined)</ins>,
+        <br><abbr title="abbreviation"></abbr> abbr is used to define abbreviations (helps with screen readers),
+        <br><sub>sub defines subscripts, like H20</sub>,
+        <br><sup>sup defines superscripts, like exponets</sup>,
+        <br><bdo dir="rtl">bdo defines text that is aligned in a different way than the base text.</bdo>
+        <br><kbd>kbd defines text that shows a keyboard input.</kbd>
+        <br><samp>samp is for text that is the output of a computer program.</samp>
+        <br><code>code is for computer code (put it in a pre element to preserve formatting).</code>
+        <br><var>var is for variables</var>
+        </p>
+    <hr>
+
+    <h3>Quotation</h3>
+    <p>There are a few kinds of quotes that you can do for example blockquotes that look like this</p>
+    <blockquote cite="https://www.merriam-webster.com/dictionary/quotation"> 
+        Merriam Webster defines a quotation as something that is quoted. This also used cite to define where the quote is from, through idk how that shows up</blockquote>
+    <p>For shorter quotes though, <q>q can be used to define them instead.</q></p>
+    <hr>
+
+    <h3>Comments</h3>
+    <p>Comments in HTML are done with like this, but with the carrots  (!-- this is a comment--). It appears green in the editor. <!-- This is how it should look--> </p>
+    <hr>
+
+    <h3>CSS</h3>
+    <p>CSS, or cascading style sheets, is how to make your HTML files look nice. This can be done inline using the style keyword, but it's done more commonly through a link with an external style sheet.
+        This link is set up like so: <cite>link rel = "stylesheet" href = "file location".</cite> The style sheet could also be linked from a website's style sheet</p>
+    <p>The style sheets are set up kinda like json files, looking like so: body { color: white; font-size: 120%}</p>
+    <hr>
+
+    <h3>Email</h3>
+    <p>In a link tag, if you set the href to "mailto:email_address", it will set a link to </p>
+    <hr>
+
+    <h3>Favicon</h3>
+    <p>The favicon is the icon that appears on the tab of a website. To choose you put the following in the head: (link rel="icon" type="image/x-icon" href="link).</p>
+    <hr>
+
+    <h3>Tables</h3>
+    <p>Tables are defined in a nested table function. It's defined like a list of lists where you make a bunch of rows (tr) which contain elements (th or td).
+        Below is a table that shows what each keyword in a table does</p>
+    <table>
+        <tr>
+            <th>Element</th>
+            <th>Purpose</th>
+        </tr>
+        <tr>
+            <td>Table</td>
+            <td>Creates the table</td>
+        </tr>
+        <tr>
+            <td>Tr</td>
+            <td>Creates a row in the table</td>
+        </tr>
+        <tr>
+            <td>Td</td>
+            <td>Contains normal data</td>
+        </tr>
+        <tr>
+            <td>Th</td>
+            <td>Contains header/bold data</td>
+        </tr>
+        <tr>
+            <td>Caption</td>
+            <td>Gives a caption/title for the table</td>
+        </tr>
+        <tr>
+            <td>Border</td>
+            <td>Creates borders between elements in table like an excel spreadsheet (in stylesheet)</td>
+        </tr>
+        <tr>
+            <td>Width/Height</td>
+            <td>Edits how wide/tall rows and columns (for the table or a specific row/column) (in style)</td>
+        </tr>
+        <tr>
+            <td>Colspan/Rowspan</td>
+            <td>Defines how many spaces a td/th takes up in a table, with span</td>
+        </tr>
+        <tr>
+            <td>Padding</td>
+            <td>Sets how much space should be between a cell border and contents</td>
+        </tr>
+        <tr>
+            <td>Border-Spacing</td>
+            <td>Defines the space between each cell</td>
+        </tr>
+        <tr>
+            <td>Nth-child(even)</td>
+            <td>Used in style to effect every other row of a table (even can be replaced)</td>
+        </tr>
+        <tr>
+            <td>Hover</td>
+            <td>Used in style to select rows where that the mouse is hovering on.</td>
+        </tr>
+        <tr>
+            <td>Colgroup</td>
+            <td>Selects a group of columns, can be used to edit width, visibility, background, and border.</td>
+        </tr>
+        <tr>
+            <td>Visibility</td>
+            <td>Used in table to hide rows if 'visibility: collapse'.</td>
+        </tr>
+        <caption><b>The use for various tags related to tables</b></caption>
+    </table>
+    <hr>
+
+    <h3>Lists</h3>
+    <p>HTML has three kinds of lists: unordered (ul), ordered(ol), and description lists (dl). The first two are filled item list items (li),
+         while description lists contain tags(dt) that each contain descriptions (dd). List can be nested and also made horizonally by using float (good for navigation bars).</p>
+    <p>Below is a list of parameters to edit lists:</p>
+    <dl>
+        <dt>style: list-style-type (ul)</dt>
+        <dd>Defines what to mark each list item with (bullet point, dash, etc.)</dd>
+        <dt>type (ol)</dt>
+        <dd>Defines what to use to count entries in list (numbers, letters, roman numerals)</dd>
+        <dt>start (ol)</dt>
+        <dd>Sets starting value for items in list (default 1).</dd>
+    </dl>
+    <hr>
+
+    <h3>Span</h3>
+    <p>The span tag can inserted inline into text to <span style="color: aquamarine;">modify</span> part of the text, mostly for style purposes.</p>
+    <hr>
+
+    <div style="width: 450px; padding:20px; margin: auto; border: 2px solid cadetblue;">
+        <h3>Div</h3>
+        <p>Div is like span, but defines lines of text. Used to group elements together, like for a text box (not the typing in kind).
+             There are lots of ways to put them together in ways that look nice, but that's a later problem.</p>
+    </div>
+    <hr>
+
+    <h3>Classes</h3>
+    <p>Like in anything else, classes define a set to style attributes that can quickly be assigned to an object. This is done by adding class="[name]" inside the starting tag. 
+        To define a class, you put the class name with a period (.name) in the stylesheet and define like any other tag. An object can have multiple classes, just seperate with a space. 
+        With JavaScript, you can also perform actions on all elements of a certain class by using getElementsByClassName().
+    </p>
+    <hr>
+
+    <h3>Ids</h3>
+    <p>You can give any element an id by adding id='[name]' to its starting tag. This can be used to create a link to it (like a bookmark) or other JavaScript things with getElementById().</p>
+    <hr>
+
+    <h3>Iframes</h3>
+    <p>An iframe is a webpage displayed in a webpage. It is defined like (iframe src='page_location' title='name'). Style can be used to change the window size, border style etc.
+        You can also target an iframe with a link if you set its target to the 'name' of the frame.
+    </p>
+    <iframe src="helloworld.html" title="Example Iframe" style="width: 400px; height: 200px; border: 2px solid cadetblue;"></iframe>
+    <hr>
+
+    <h3>JavaScript</h3>
+    <p>JavaScript is used to add fancy functionality to websites. It is commonly used in script elements. For example, JavaScript is used below to display the current time.</p>
+    <p id="demo"></p>
+    <script>
+        document.getElementById('demo').innerHTML = Date()
+    </script>
+    <hr>
+
+    <h3>Filepaths</h3>
+    <p>Like in Linux, HTML supports relative file paths. You can define the full filepath, or just the filename if the file is in the same folder. Or you can use ../filename
+        if the file is one folder back etc.
+    </p>
+    <hr>
+
+    <h3>Meta Attributes</h3>
+    <p>The meta element goes in the head and help define various metadata fields like keywords for search engines, character set used (UTF-8), and viewport setting for better support for more devices.</p>
+    <hr>
+
+    <h3>Base</h3>
+    <p>The base element defines a base URL from which all urls in the webiste are derived from, to make relative file paths easier.</p>
+    <hr>
+
+    <h3>Semantic Elements</h3>
+    <p>HTML code is often split up into semantic elements, like section, header, article, etc., to make it easier to read, and allows for some reuse. Below is a list of semantic elements and their uses.</p>
+    <dl>
+        <dt>Section</dt>
+        <dd>A thematic grouping of content, typically with a heading. Basically what all of these definitions are. Chapters, contact info, etc.</dd>
+        <dt>Article</dt>
+        <dd>A piece of content that makes sense, and could be distributed, on its own. Examples include blog posts, user comments, or news articles.</dd>
+        <dt>Sections and Articles</dt>
+        <dd>Note: Sometimes you will find sections nested in articles, while other people will nest articles in sections. You can do both, it just depends what you feel like doing.</dd>
+        <dt>Header</dt>
+        <dd>A header contains some introductory information, like a logo and name, and/or some navigation links. Headers go at the top of the page.</dd>
+        <dt>Footer</dt>
+        <dd>Footers go at the bottom of a page and can contain various information like authorship and copyright information, sitemaps, back to top links, etc.</dd>
+        <dt>Nav</dt>
+        <dd>A nav contains navigations links, not too much more to say.</dd>
+        <dt>Aside</dt>
+        <dd>An aside contains content vaguely related to the content its near. It can go below it or in some kind of sidebar.</dd>
+        <dt>Figure and Figcaption</dt>
+        <dd>A figure is self-contained content, like a picture or a chart, and a figcaption give the figure a caption.</dd>
+    </dl>
+    <hr>
+
+    <h3>Character Entities</h3>
+    <p>HTML has reserved characters, like &lt; and &gt;, but you can use character entities allow you to still use them. A table of some common ones is provided below.
+        If you need one that's not there you can just google it. Like this &#128019; (You need UTF-8 for that to work).
+    </p>
+    <table>
+        <tr>
+            <th>Character</th>
+            <td>&lt;</td>
+            <td>&gt;</td>
+            <td>&amp;</td>
+            <td>A non-breaking space</td>
+            <td>&quot;</td>
+            <td>&apos;</td>
+            <td>&cent;</td>
+            <td>&copy;</td>
+            <td>&trade;</td>
+        </tr>
+        <tr>
+            <th>Entity</th>
+            <td>lt or #60</td>
+            <td>gt or #62</td>
+            <td>amp or #38</td>
+            <td>nbsp or #160</td>
+            <td>quot or #34</td>
+            <td>apos or #39</td>
+            <td>cent or #162</td>
+            <td>copy or $169</td>
+            <td>trade or #174</td>
+        </tr>
+        <caption><b>Table of Character Entities (Proceded by an &amp;)</b></caption>
+    </table>
+    <hr>
+
+    <h3>XHTML</h3>
+    <p>XHTML is basically just HTML with stricter rules to be more flexable for other formats, mainly XML. 
+        The main rule to follow is that you have to end all of your tags, even the single ones. Example: &lt;br&gt; becomes &lt;br /&gt;</p>
+    <hr>
+    <br>
+
+    <h2 id="Style">List of Style Properties</h2>
+
+    <h3>Color</h3>
+    <p style="color: palegreen;">Changes the color of a piece of text. Can also be used in the body tag to change all the text for the page.
+        Note for all the color ones, the color can be defined by hex (#ffffff), rgb (rgb(255, 12, 72, 1)), hsl (hsl(9, 100%, 64%)), or by pre-defined color names (tomato, palegreen)
+    </p>
+    <hr>
+
+    <h3>Background-Color</h3>
+    <p>Changes the color of the webpage. Used in the body tag</p>
+    <hr>
+
+    <h3>Border</h3>
+    <p style="border: 2px solid tomato;">Addes a border, a little rectange, around the element. You define the width of the border in pixels, the color and if it's solid that color. 
+        Also, borders exists for each direction (top, bottom, left, right).</p>
+    <hr>
+
+    <h3>Border-Radius</h3>
+    <p style="border: 2px solid tomato; border-radius: 10px;">Addes rounded corners to borders</p>
+    <hr>
+
+    <h3>Border-Style</h3>
+    <p style="border: 2px tomato; border-style: dotted;">Defines the type of line used in the borders: solid, dotted, dashed, double, groove, ridge, inset, outset, none, hidden (default)</p>
+    <hr>
+
+    <h3>Padding</h3>
+    <p style="border: 2px solid tomato; padding: 30px;" >Defines, in pixels, the space between the text and a border element. Also, padding exists for each direction (top, bottom, left, right).</p>
+    <hr>
+    
+    <h3>Margin</h3>
+    <p style="border: 2px solid tomato; margin: 50px;" >Defines the margin outside of a border.</p>
+    <p>It effects how close it is to other elements.</p>
+    <hr>
+
+    <h3>Border-Collapse</h3>
+    <p>Used to prevent borders next to each other creating a double border effect (like in a table)</p>
+    <hr>
+
+    <h3>Link Colors</h3>
+    <p>The color of links in different states can be changed with a:link, a:visited, a:hover, or a:active in a style sheet. This also works in buttons.</p>
+    <hr>
+
+    <h3>Font-Family</h3>
+    <p style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Defines the font used on the page or in a piece of text.</p>
+    <hr>
+
+    <h3>Font-Size</h3>
+    <p style="font-size: 120%;">Changes the font size of the text. Can be defined by a size in pixels (better for single lines) or modified their base size by a percentage (font-size: 300%;).
+        Can also be defined by viewport width (vw) which is more accomodating to more devices.
+    </p>
+    <hr>
+
+    <h3>Text-Align</h3>
+    <p style="text-align: center;">Changes the text alignment like left, center, right, etc.</p>
+    <hr>
+
+    <h3>Float</h3>
+    <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/800px-HTML5_logo_and_wordmark.svg.png" alt="HTML Logo" style="float: right; width: 100px;height: 100px;">
+        Makes an image float to the left/right of text. Can also use width/height in style to size images to prevent issues with style sheets.</p>
+    <hr>
+
+    <h3>Background-Image</h3>
+    <p>Makes the background color of the page an image, formatted like url('link'). 
+        <br>background-repeat: no-repeat can be used to stop a small image from repeating along the screen.
+        <br>background-attachment: fixed can be used to make sure the background image doesn't scroll.
+        <br>background-size: cover or 100% 100% allow it to stretch an image to the size of the screen.
+    </p>
+    <hr>
+
+    <h3>@Media</h3>
+    <p>Not a tag in style, but you can use @media screen to check the resolution of the screen to do different things with style similar to picture element stuff.</p>
+    <hr>
+    <br>
+
+    <h2 id="Forms">Forms and User Input</h2>
+
+    <h3>The Form Element</h3>
+    <p>The form element is needed to make a form in HTML. This usually contains a variety of input elements.</p>
+    <hr>
+
+    <h3>Inputs</h3>
+    <p>Inputs are for, shockingly, taking in user inputs. They take a id, name, and type. The name and id are used for other things, but the type defines what kind of input you are making.
+        HTML has many options from text boxes to color pickers, to sliders.
+    </p>
+    <hr>
+
+    <h3>Labels</h3>
+    <p>Most form elements will use a label to describe what the input is asking for. It is defined like &lt;label for='name'&gt;[insert label here]&lt;/label&gt;</p>
+    <hr>
+
+    <h3>The Action Attribute</h3>
+    <p>The form element can have an action attribute that defines an action to be performed when the form is submitted.
+        Usually this involves sending the form data to a file on the server.
+    </p>
+    <hr>
+
+    <h3>The Target Attribute</h3>
+    <p>Like links, forms can have a target attribute which determines where to display the responce to the form (see that section for details).</p>
+    <hr>
+
+    <h3>Post vs Get</h3>
+    <p>The form element can contain a method attribute that determines what protocal to use to send the form data. The two main options are post and get.
+        Get is the default, allows for a page to be bookmarked, and is easer, BUT has a size limit of 2048 characters.
+        Post doesn't have this limit and send the data more securely, so sensitive information should always be sent with post rather than get.
+    </p>
+    <hr>
+
+    <h3>Autocomplete</h3>
+    <p>If you turn on autocomplete (autocomplete="on"), the form will have autocomplete based on what the user has inputted before. Not too complicated.</p>
+    <hr>
+
+    <h3>Novalidate</h3>
+    <p>If you turn on novalidate (novalidate), the form will not attempt to do any kind of validation before it submits the form. 
+        This is useful if, for example, you wanted a user to be able to save their progress mid-form.</p>
+    <hr>
+
+    <h3>Select</h3>
+    <p>The select element creates a drop-down list. It is filled with options (&lt;option value="name"&gt;Name&lt;/option&gt;).
+        The list needs an id and a name, and can also have a size, which defines how many values are visable, and multiple, which flags if multiple options can be selected.</p>
+    <hr>
+
+    <h3>Textarea</h3>
+    <p>The textarea element defines an textbox input. It can be size either by using the rows and columns attributes (represents number of characters), or with width and height through style.</p>
+    <hr>
+
+    <h3>Button</h3>
+    <p>A button is set up with (button onclick="something"). For example if onclick='document.location=link', the user will be sent to a different page.</p>
+    <button onclick="document.location='https://www.youtube.com/watch?v=dQw4w9WgXcQ'">Button Link</button>
+    <hr>
+
+    <h3>Fieldset</h3>
+    <p>A fieldset is a group of elements in a form. It can include a legend element to give it a title, like figcaption does for figures.</p>
+    <hr>
+
+    <h3>Datalist</h3>
+    <p>A datalist element is a textbox with predefined options that can be selected. The datalist has an id and contains options with values.
+        To select the datalist, an input needs to be created with a list attribute equal to the id of the datalist.</p>
+    <input list="datalist">
+    <datalist id="datalist">
+        <option value="This"></option>
+        <option value="is"></option>
+        <option value="a"></option>
+        <option value="Datalist"></option>
+    </datalist>
+    <hr>
+
+    <h3>Output</h3>
+    <p>The output element contains the result of some calculation/function performed, like one by a script.</p>
+    <hr>
+
+    <h3>The Input Types</h3>
+    <p>There are a variety of input types for forms. Below will be a form that contains a lot of them.</p>
+    <form action="/action_page.php">
+        <label for="text">Text:</label><br>
+        <input type="text" id="text" name="text"><br><br>
+
+        <label for="password">Password (Input hidden):</label><br>
+        <input type="password" id="password" name="password"><br><br>
+
+        <label for="radio">Radio Selector:</label><br>
+        <input type="radio" id="example_r" name="radio">
+        <label for="example_r">Example</label><br>
+        <input type="radio" id="rad" name="radio">
+        <label for="rad">Radio</label><br>
+        <input type="radio" id="buttons" name="radio">
+        <label for="buttons">Buttons</label><br><br>
+
+        <label for="checkbox">Checkbox Selector:</label><br>
+        <input type="checkbox" id="example_c" name="checkbox">
+        <label for="example_c">Example</label><br>
+        <input type="checkbox" id="check" name="checkbox">
+        <label for="check">Checkbox</label><br>
+        <input type="checkbox" id="select" name="checkbox">
+        <label for="select">Selection</label><br><br>
+
+        <label for="button">Button:</label><br>
+        <input type="button" onclick="alert('You clicked me!')" value="Click Me!"><br><br>
+
+        <label for="color">Color Selector:</label><br>
+        <input type="color" id="color" name="color"><br><br>
+
+        <label for="date">Date Selector:</label><br>
+        <input type="date" id="date" name="date"><br><br>
+
+        <label for="date">Date With Min/Max Limit:</label><br>
+        <input type="date" id="datemin" name="datemin" min="2025-01-01" max="2025-01-31"><br><br>
+
+        <label for="datetime">Datetime-local:</label><br>
+        <input type="datetime-local" id="datetime" name="datetime"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="file">File Submitter:</label><br>
+        <input type="file" id="file" name="file"><br><br>
+
+        <label for="hidden">There is a hidden field here (hidden).</label>
+        <input type="hidden" id="hidden" name="hidden" value="True"><br><br>
+
+        <label for="month">Month (and Year) Selector:</label><br>
+        <input type="month" id="month" name="month"><br><br>
+
+        <label for="number">Number With Min/Max Limit:</label><br>
+        <input type="number" id="number" name="number" min="1" max="10"><br><br>
+
+        <label for="range">Range:</label><br>
+        <input type="range" id="range" name="range" min="0" max="100"><br><br>
+
+        <label for="search">Search:</label><br>
+        <input type="search" id="search" name="search"><br><br>
+
+        <label for="tel">Tel(ephone Number):</label><br>
+        <input type="tel" id="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br><br>
+
+        <label for="time">Time:</label><br>
+        <input type="time" id="time" name="time"><br><br>
+
+        <label for="url">URL:</label><br>
+        <input type="url" id="url" name="url"><br><br>
+
+        <label for="week">Week:</label><br>
+        <input type="week" id="week" name="week"><br><br>
+
+        <input type="image" src = "https://cdn-icons-png.flaticon.com/256/5360/5360973.png" alt="Submit" width="48" height="48">
+        <input type="submit" value="Submit (makes button)">
+        <input type="reset" value="Reset (makes button)">
+    </form>
+    <hr>
+
+    <h3>Input Restrictions</h3>
+    <p>There are a variety of attributes to the input field that can define what kinds of values can go in a input. A list of some is included below.</p>
+    <dl>
+        <dt>Checked</dt>
+        <dd>Sets input as pre-checked on loading in.</dd>
+        <dt>Disabled</dt>
+        <dd>Disables an input (useful with scritpts to turn inputs on/off depending on selections).</dd>
+        <dt>Max/Min</dt>
+        <dd>Sets maximum/minimum values for a field (i.e number, date, etc.)</dd>
+        <dt>Maxlength/Minlength</dt>
+        <dd>Sets a maximum/minimum length for strings in input fields (for stuff like passwords).</dd>
+        <dt>Pattern</dt>
+        <dd>Makes sure a inputted value conforms to a regex expression.</dd>
+        <dt>Placeholder</dt>
+        <dd>Defines a hint value to be dispalyed in the input until text is put in it.</dd>
+        <dt>Readonly</dt>
+        <dd>Marks an input as read-only (can't be changed).</dd>
+        <dt>Required</dt>
+        <dd>Marks an input as required for submission.</dd>
+        <dt>Size</dt>
+        <dd>Sets the width of an input field.</dd>
+        <dt>Step</dt>
+        <dd>Specifies the legal number intervals for an input field.</dd>
+        <dt>Value</dt>
+        <dd>Sets a default value for a field</dd>
+    </dl>
+    <hr>
+
+    <h3>Formenctype</h3>
+    <p>Formenctype defines the encoding scheme to be used when submitting the data, when using the post protocal. Is put in the submit/image input. Ex. multipart/form-data</p>
+    <hr>
+
+    <h3>Submit attributes</h3>
+    <p>Submit also has formtarget, formnovalidate, and formmethod, which override and do the same things as the target, method, and novalidate attributes for the form element.</p>
+    <hr>
+
+    <h2 id="Graphics">HTML Canvas and SVG</h2>
+
+    <h3>Canvas</h3>
+    <p>A canvas element is a container in which to draw graphics on the fly with JavaScript.
+        An example of how to declare a canvas is as follows: &lt;canvas id='name' width='x' height ='y' style='border:1px solid #000000;'&gt;.
+    </p>
+    <hr>
+
+    <h3>Drawing on a Canvas</h3>
+    <p>To draw on the canvas, Javascript code has to be written. The following code, for example, would draw a line diagionally across the canvas.</p>
+    <pre>
+        <code>
+            var canvas=document.getElementById('myCanvas');
+            var pen=canvas.getContext('2d');
+            pen.moveto(0,0);
+            pen.lineto(100,100);
+            pen.stroke();
+        </code>
+    </pre>
+    <hr>
+
+    <h3>Moveto and Lineto</h3>
+    <p>In the canvas, the moveTo method moves the pen object to a specific point, and the lineTo method makes a line from where the pen is to a point specific point.</p>
+    <hr>
+
+    <h3>BeginPath, Arc, and Stroke</h3>
+    <p>In the canvas, the beginPath method is used to reset/set a path for the pen object, and arc defines a arc to be drawn on the canvas that is confirmed with the stroke method.
+        In the arc method, the following values are taken: pen.arc(x,y,radius,start angle, end angle) (the angles are in radians, 0 to 2&pi; is a circle, the arcs go backwards from what I'd expect).
+    </p>
+    <hr>
+
+    <h3>Drawing Text</h3>
+    <p>To draw text on a canvas, you first need to define a font size and family (pen.font="30px Arial";) 
+        and then you call either stroketext or filltext with the text and the x,y of the bottom left of the text. Below is what both methods look like</p>
+    <canvas id="canvas" width="150" height="100" style="border: 1px solid black;">
+        <script>
+            var canvas=document.getElementById('canvas');
+            var pen=canvas.getContext('2d');
+            pen.font="24px Arial";
+            pen.fillText("FillText",10,40);
+            pen.strokeText("StrokeText",10,80);
+        </script>
+    </canvas>
+    <hr>
+
+    <h3>Gradients</h3>
+    <p>You can make gradients in HTML using the createLinearGradient function, which takes the x,y of the beginning and end of the gradient (usually something like 0,0,x,0).
+        Color stops need to be added with addColorStop, which 1)defines the colors of the gradient, and 2) makes it visable when used in a fill like in fillRect by editing the fillStyle.</p>
+    <p>Additionally, a circular gradient can be made with createRadialGradient by defining the x,y and raidus of the starting and ending circles 
+        (usually the x and y are similar, but r1 is small and r2 is large(r)).</p>
+    <hr>
+
+    <h3>Images in Canvas</h3>
+    <p>An image can be drawn in a canvas by getting the id in the same way you get the id of the canvas, and by utilizing the drawImage function (pen.drawImage(img,x,y)).</p>
+    <hr>
+
+    <h3>SVG</h3>
+    <p>An SVG element contains SVG graphics, XML-based vector graphics that, since they are vector-based, they don't lose quality when they are resized.</p>
+    <hr>
+
+    <h3>SVG Examples</h3>
+    <p>Included below are some code snippets of SVG elements and what they produce on the screen.</p>
+    
+    <p><b>Create a circle:</b></p>
+    <pre>
+        <code>
+            &lt;svg width="80" height="80"&gt;
+                &lt;circle cx="40" cy="40" r="20" stroke="green" stroke-width="2" fill="red" /&gt;
+            &lt;/svg&gt;
+        </code>
+    </pre>
+    <svg width="80" height="80">
+        <circle cx="40" cy="40" r="20" stroke="black" stroke-width="4" fill="red" />
+    </svg>
+    <hr>
+
+    <p><b>Create a rectangle:</b></p>
+    <pre>
+        <code>
+            &lt;svg width="80" height="80"&gt;
+                &lt;rect cx="10" cy="10" width="60" height="30" stroke="black" stroke-width="4" fill="green" /&gt;
+            &lt;/svg&gt;
+        </code>
+    </pre>
+    <svg width="80" height="50">
+        <rect x="10" y="10" width="60" height="30" stroke="black" stroke-width="4" fill="green" />
+    </svg>
+    <hr>
+
+    <p><b>Create a fancy square:</b></p>
+    <pre>
+        <code>
+            &lt;svg width="80" height="80"&gt;
+                &lt;rect x="10" y="10" rx = "10" ry="10" width="80" height="80" 
+                style="fill: green; stroke: black; stroke-width: 4; opacity: 0.5;"/&gt;
+            &lt;/svg&gt;
+        </code>
+    </pre>
+    <svg width="80" height="80">
+        <rect x="10" y="10" rx = "10" ry="10" width="60" height="60" 
+        style="fill: cadetblue; stroke: black; stroke-width: 4; opacity: 0.5;"/>
+    </svg>
+    <hr>
+
+    <p><b>Create a star:</b></p>
+    <pre>
+        <code>
+            &lt;svg width="120" height="120"&gt;
+                &lt;polygon points="40,10 20,60 70,30 10,30 60,60"
+                style="fill: cadetblue; stroke: black; stroke-width: 4; fill-rule: evenodd;"/&gt;
+            &lt;/svg&gt;
+        </code>
+    </pre>
+    <svg width="120" height="120">
+        <polygon points="40,10 20,60 70,30 10,30 60,60"
+        style="fill: palegoldenrod; stroke: black; stroke-width: 4; fill-rule: evenodd;"/>
+    </svg>
+    <hr>
+
+    <p><b>Create an ellipse with gradient and text:</b></p>
+    <pre>
+        <code>
+            &lt;svg width="500" height="130"&gt;
+                &lt;defs&gt;
+                    &lt;linearGradient id="gradSVG"&gt;
+                        &lt;stop offset="0%" stop-color="orange"/&gt;
+                        &lt;stop offset="100%" stop-color="purple"/&gt;
+                    &lt;/linearGradient&gt;
+                &lt;/defs&gt;
+                &lt;ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#gradSVG)"/&gt;
+                &lt;text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86"&gt;Text&lt;/text&gt;
+            &lt;/svg&gt;
+        </code>
+    </pre>
+    <svg width="500" height="130">
+        <defs>
+            <linearGradient id="gradSVG">
+                <stop offset="0%" stop-color="orange"/>
+                <stop offset="100%" stop-color="purple"/>
+            </linearGradient>
+        </defs>
+        <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#gradSVG)"/>
+        <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">Text</text>
+    </svg>
+    <hr>
+
+    <h2 id="Media">Working with Media Files</h2>
+
+    <h3>Video Element</h3>
+    <p>The video element works similarly to the picture element, where a width and height is defined and various source elements are placed in the video element to help with various devices.
+        The controls attribute can be added to the video element to enable controls like play, pause, volume etc. Different sources would be various file formats, like mp4.
+        The autoplay attribute makes the video start automatically (Chromium usually only allows muted autoplay). The muted tag would make the video start muted. 
+    </p>
+    <hr>
+
+    <h3>Audio Element</h3>
+    <p>The audio element works the same way as the video element, and has a lot of the same attributes: autoplay, muted, controls, etc.</p>
+    <hr>
+
+    <h3>Object and Embed Elements</h3>
+    <p>Both the objec and embed elements were designed for use with plug-ins, like Flash, or Java applets, but these are mostly unsupported anymore.
+        Beyond that, they are both able to be used to embed an object, like a HTML file or an image, in a HTML file. Here are the formats for these elements:
+    </p>
+    <p>&lt;object data='file name'&gt; &lt;/object&gt;</p>
+    <p>&lt;embed src='file name'&gt;</p>
+    <hr>
+
+    <h3>Playing Youtube Videos</h3>
+    <p>If you don't want to go through the hassle of dealing with video formats, you can instead insert videos into your website using Youtube.
+        To do this you make an iframe with its src equal to a youtube link ("https://www.youtube.com/embed/tgbNymZ7vqY") with an embed tag.
+        You can add arguements (after a ? and seperated by &s) to the link to enable certain properties:
+    </p>
+    <p>autoplay=1 turns on autoplay, mute=1 mutes the video by default. playlist='videoID' along with loop=1 makes the video loop forever. controls=0 disables the player controls.</p>
+    <iframe width="420" height="315"
+    src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0">
+    </iframe>
+    <hr>
+
+    <h2 id="API">Working with APIs</h2>
+
+    <h3>getCurrentPosition</h3>
+    <p>The navigator.geolocation.getCurrentPosition(x) method is used to retrieve the user's position and send it to the method x.
+        That position contains latitude, longitude, accuracy, altitude, and altitude, altitudeAccuracy, heading, speed, and timestamp if avaliable in name.coords.
+    </p>
+    <p>getCurrentPosition can also take a second parameter, which is a function to handel errors. You could have a general responce or a different one for different kinds of errors.
+        error.PERMISSION_DENIED, the user turned off location permissions for the website, error.POSITION_UNAVALIABLE, the location data is unavalible,
+         error.TIMEOUT, location request timed out, or error.UNKNOWN_ERROR, misc. unknown error.
+    </p>
+    <hr>
+
+    <h3>watchPosition</h3>
+    <p>The watchPosition method is similar to getCurrentPosition except it runs constantly and returns updated positions (useful for stuff like GPS). The clearWatch method turns this off.</p>
+    <hr>
+
+    <h3>Drag and Drop</h3>
+    <p>To enable drag and drop on an element takes a lot of steps, but it's not paticularly complicated. Here are a list of the things that need to be done:</p>
+    <dl>
+        <dt>Make an element draggable</dt>
+        <dd>Add draggable="true" to an element to make it draggable.</dd>
+        <dt>Define dragging behavior</dt>
+        <dd>A function needs to be written that defines what to do when dragging starts and placed in the element as ondragstart="functionName(event)".</dd>
+        <dt>Define droppable locations</dt>
+        <dd>By default, a dragged element can't be dropped anywhere, so you need to define behavior in a function for elements to accept dragged elements
+             (at least event.preventDefault()) and put it in ondragover="functionName(event)".</dd>
+        <dt>Define drop behavior</dt>
+        <dd>You need to preventDefault() again and define what should happen when an element is dropped on another element in a function and place it in ondrop="functionName(event)"
+             of the object being dropped on.</dd>
+    </dl>
+    <p>Below is an example of what this might look like.</p>
+    <div id="dragDropA" ondrop="drop(event)" ondragover="allowDrop(event)" style="border: 1px solid black; width: 100px; height: 100px; float: left;">
+        <img src="https://cdn-icons-png.flaticon.com/512/4063/4063297.png" draggable="true" ondragstart="dragStart(event)" id="drag1" width="88" height="88">
+    </div>
+      
+    <div id="dragDropB" ondrop="drop(event)" ondragover="allowDrop(event)" style="border: 1px solid black; width: 100px; height: 100px; float: left;"></div>
+    <hr>
+
+    <h3>Web Storage</h3>
+    <p>Websites like to store user data to make navigation more convient, like remembering your account so you don't have to log in every time you visit the page.
+        This can be done with cookies, but webstorage allows for much more data to be saved, but is not supported by some older browsers.
+        Before you use it you want to check if web storeage is supported (if (typeof(Storage) !== "undefined")).
+    </p>
+    <hr>
+
+    <h3>LocalStorage</h3>
+    <p>LocalStorage is web storage that has no experation date (it stays when the tab is closed).
+        You can use localStorage.setItem("key", "value"), localStorage.getItem("key"), localStorage.removeItem("key") to manipulate the local storage.
+        It can also keep some special values, like localStorage.clickcount.
+    </p>
+    <hr>
+
+    <h3>SessionStorage</h3>
+    <p>SessionStorage works in the exact same way as localStorage, except sessionStorage is only for the session, meaning that it resets when the browser is closed.</p>
+    <hr>
+
+    <h3>Web Workers</h3>
+    <p>A web worker is a JavaScript that runs in the background of a webpage without affecting performance of the webpage.
+        Before you use it you want to check if web workers are supported (if (typeof(Worker) !== "undefined")).
+        You create a worker with w = new Worker("JavaScript file"), w.terminate() to delete a worker, and w = undefined to reset a worker.
+        It is important the script in the worker utilizes messages, or it won't communicate with the page; w.onmessage determines what will happen when the worker recieves an input for the webpage.
+    </p>
+    <hr>
+
+    <h3>Server-Sent Events (SSE) API</h3>
+    <p>SSEs help web pages get updates automatically from a server, like when a new email shows up automatically when its sent without you having to refresh the page.
+        To create a SSE source, you do new EventSource('file name'), and they communicate with messages and event.onmessage, like web workers.
+        Before you use it you want to check if SSEs are supported (if (typeof(EventSource) !== "undefined")).
+    </p>
+
+
+</body>
+</html>

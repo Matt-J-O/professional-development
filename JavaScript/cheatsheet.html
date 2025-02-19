@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Script Tester</title>
+    <link rel="stylesheet" href="cheatsheet.css">
+    <link rel="shortcut icon" href="https://static.wikia.nocookie.net/wizardoflegend_gamepedia_en/images/b/b1/Prestigious_Diploma.png/revision/latest?cb=20190324002713" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Matthew Owen">
+
+    <!--Turn on refresh for easier updates when adding new info.-->
+    <!--<meta http-equiv="refresh" content="30"> -->
+</head>
+
+<body id = "bg">
+    <h2>Javascript Notes</h2>
+    <p>A collection of small scripts that will define some unique properties of Javascript and examples of their use with HTML.</p>
+    <hr>
+    
+    <h3>Where to Write Javascript</h3>
+    <p>There are several places you can add Javascript code for your HTML pages. The most common way is to write it in an external file and call functions written in them, but you can also 
+        write code in a HTML document within a script element (defining a src for the script is for external files).
+    </p>
+    <hr>
+
+    <h3>Kinds of Alerts</h3>
+    <script src="alert.js"></script>
+    <button onclick="alertSample()" style="float: left;"><b>Alerts</b></button>
+    <button onclick="confirmSample()" style="float: left;"><b>Confirms</b></button>
+    <button onclick="promptSample()" style="float: left;"><b>Prompts</b></button>
+    <button onclick="logSample()" style="float: left;"><b>Logs</b></button>
+    <button onclick="writeSample()" style="float: left;"><b>Document.write()</b></button>
+    <p style="clear: both;">A basic way to add interaction to a webpage is with alerts. Hit the buttons to see explanation of some of the simple ones with an example.</p>
+    <hr>
+
+    <h3>Var, Let, and Const</h3>
+    <p>In Javascript, there are three keywords that can be used to define a variable: var, let, and const. Let is the main one you should use, it's normal variable stuff. Var is basically just 
+        and old version of let that you only should use if you need to support old browsers. Const declares a variable that can't be reassigned not that it can't change. It's used for a) constant values 
+        (pi, color hex values etc.) or b) news arrays/objects/functions because you can still change what is inside of them, but you (usually) don't want to completely undo what's in these.
+    </p>
+    <p>An additional note: Like Python, you don't have to declare data types with variables in Javascript, it's done automatically.</p>
+    <hr>
+
+    <h3>Javascript Objects and JSONs</h3>
+    <p>In Javascript, objects are the main data structure you're gonna be working with. They're similar to dictonaries in Python to the extent that 1) they use a key-value system for storing data and 
+        2) they both formatted like json files (json stands for JavaScript Object Notation). The main difference between objects and python dictonaries is that, like objects in other languages, 
+        JavaScript objects can contain functions and its called like object.key = value. An object is declared in the following way:
+    </p>
+    <pre>
+        <code>
+            const (or let) name = {
+                key1: "value1"
+                key2: "value2"
+                key3: functionName() {
+                    [FUNCTION DEFINITON]
+                }
+            }
+        </code>
+    </pre>
+    <p>Most data that comes from servers and the like to Javascript will be returned in the form of jsons files that you can then turn into objects with the JSON.parse(text) method. This method 
+        needs the <b>text</b> from the json file, and not just the filename. You can also use JSON.stringify(object) to convert an object into a string either to print it or to send it somewhere else.
+    </p>
+    <p>Note that while they are called objects, you don't need a class to make an object like in other languages, but you still can create something like a class, which, in Javascript, 
+        just serves as a constructor function for objects. Here is an example of what that would look like:</p>
+    <pre>
+        <code>
+            function Article(author, release, text, headline) {
+                this.author = author;
+                this.release = release;
+                this.text = text;
+                this.headline = headline;
+            }
+        </code>
+    </pre>
+    <hr>
+
+    <h3>HTML Events</h3>
+    <p>Beyond running on load, HTML events allow you to run Javascipt functions when various things happen to an HTML element, like onclick for buttons. Listed below are some examples of more events:</p>
+    <ul>
+        <li>onchange: When an element is changed</li>
+        <li>onclick: When an element is clicked on</li>
+        <li>onmousedown, onmouseup: Part of onclick, when the mouse is held and when it is released</li>
+        <li>onmouseover: When the mouse hovers over an element</li>
+        <li>onkeydown: When the user pushes a keyboard key</li>
+        <li>onload: When a page finishes loading</li>
+        <li>ondragstart/ondragover/ondrop: Used for and describes the various stages of drag and drop</li>
+        <li>onInput, onChange: When a users changes the contents of an input field</li>
+    </ul>
+    <hr>
+
+    <h3>Callback Functions</h3>
+    <p>In Javascript, you can add a function as an arguement to another function and this is called a callback function. You can then call the argument function in the main function. This has uses 
+        with things like async functions.</p>
+    <hr>
+    
+    <h3>Async Javascript</h3>
+    <p>Asynchronous refers to functionality that allows a function to wait on the result of a function while also working on other things in the background. A simple example of this (not super useful) is by 
+        utilizing the setTimeout(function, time in ms) which runs the arguement function after a delay or setInterval with the same arguements to run a function for each interval
+    </p>
+    <p>A better way to set up asynchronous functions involves utilizing Promises. Promises contain two parts, the first is code that needs to be waited on, and the second part is a promise.then() that 
+        manages the responce for if the code that is being waiting on is successful or not. Usually, this is wrapped into APIs, not done on a page's Javascript, but it can be. Promises can also be nested 
+        inside other promises.
+    </p>
+    <p>Finally (for now), you can utilize the async and await keywords, like in Python. Putting async in a function declaration makes it return a promise while await pauses execution of a line until 
+        a promise is resolved (only usable in a async function).
+    </p>
+    <hr>
+    
+    <h3>Modifying HTML/CSS Values</h3>
+    <button onclick="bgFlashbang()" style="float: left;"><b>Flashbang</b></button>
+    <button onclick="bgRevert()" style="float: left;"><b>Revert</b></button>
+    <p style="clear: both;">The main way of modifying HTML elements is by editing the innerHTML of an element by grabbing it with its id with document.getElementById(id).innerHTML. You can also edit 
+        CSS variables with var = document.querySelector(':root') which will grab all the variables and var.style.setProperty(--name, newValue); to change the value. You can also get elements by 
+        their tag or class with getElementsByTagName/getElementByClassName, which would edit the innerHTML of multiple elements at once. Additionally, instead of the innerHTML you can change the 
+        an attribute or style property of an element(s) with the attribute / property name (ex. getElemensByClassName(links).src = "new link"). See the above buttons for an example, 
+        (note that if the property/attribute contains a '-' format it like element["property-name"] instead).
+    </p>
+
+    <hr>
+
+    <h3>HTML Forms with Javascript</h3>
+    <p>Using alerts to get the all your data into Javascript would be really bad, so good thing you can grab the contents of forms and inputs in a page's HTML using the value attribute. 
+        If the input you want is in a form, you can grab it using document.forms["myForm"]["name"] or drop the ["name"] to get a list of all inputs in a form. You could then add Javascript functions to run 
+        on submit with the onsubmit attribute of the form.
+    </p>
+    <script>
+        function captchaVerify() {
+            if (document.forms["captchaForm"]["captcha"].value == "CK213E") {
+                alert("Captcha and text match!")
+            }
+            else {
+                alert("Captcha and text don't match. Please try again.")
+            }
+            return false
+        }
+    </script>
+    <form action="/action_page.php" onsubmit="captchaVerify()" id="captchaForm">
+        <label for="captcha">Input the following text: CK213E</label>
+        <input type="text" id="captcha">
+        <input type="submit">
+    </form>
+    <hr>
+
+    <h3>Using Javascript for Animations</h3>
+    <p>Along with the animation capabillites of HTML and CSS, you can also add some animations using Javascript. You do this by creating and clearing intervals with clearInterval() and setInterval(). 
+        In setInterval, you add a function that will change the style of an element and define a point at which the change will stop, by calling clearInterval(), and a interval at which the function will repeat. 
+        An example would be a function that moves an element 1px to the right every 5 ms until the element its moved 350 pixels.
+    </p>
+    <hr>
+
+    <h3>EventListeners</h3>
+    <p>Javascript allows you to modify the eventListeners in HTML elements, like an onclick function, using the add/removeEventListener() functions. These functions take the name of the event 
+        without the on (onclick -> click) and the name of a function to add/remove. Using this, you can do more things than just defining the onclick field, such as changing or adding multiple functions to 
+        a single event.
+    </p>
+    <hr>
+
+    <h3>Creating HTML Elements</h3>
+    <p>In addition to being able to modify existing elements, you can also use Javascript to create new HTML elements and place them as children of existing elements. You create an element by using 
+        document.createElement("element type (like "p" or "h2")") and you can place them by making them children to existing element by using parent.appendChild(child). You can alternativly use 
+        parent.insertBefore(newElem, existingElem) to place the new element before the existing element. You can also use remove an element with elementName.remove() or replace an element with 
+        parent.replaceChild(newElem, oldElem).
+    </p>
+    <p>Note that elements created by Javascript can be modified in the same way as any other element.</p>
+
+    <h3>The Window and Screen Object</h3>
+    <p>The window object represents the browser window can contains all elements (document is a child of window) and information about the window, included in this is window.innerHeight/Width which gives 
+        the size of the window, along with functions like window.open() and close() which open a new window and close the current one respectivly, as well as window.moveTo() and resizeTo() which move or 
+        resize the current window.
+    </p>
+    <p>The screen object (a child of window, but you don't need to incude it like document) contains more detailed information about the user's screen such as width/height and avaliWidth/Height to see 
+        how big the screen is and could be, as well as colorDepth and pixelDepth which shows how many bits are used to represent colors (usually 24 or 32), more bits means more/better options.
+    </p>
+    <hr>
+
+    <h3>The Location Object</h3>
+    <p>The location object can provide some information about where the page is located in the internet. location.href provides the url of the current page, while location.hostname gives just the hostname 
+        (Ex. google.com). location.pathname gives the filepath to the current page. Finally, location.protocal and port give the web protocal (http/https) and port used respectivly (default ports (80, 443)
+         are not shown by location.port)
+    </p>
+    <p>Finally, you can use location.assign(webpage) to load a new HTML doc.</p>
+    <hr>
+
+    <h3>History.back and History.forward</h3>
+    <p>history.back() and history.forward() are two functions in Javascript that act the same as hitting the back and forward arrow on your browser respectivly and load the previous/next page in your history.</p>
+    <hr>
+
+    <h3>The Navigator Object</h3>
+    <p>The navigaor object contains information about a user's browser that doesn't have to do with visuals. For example it has the cookieEnabled and javaEnabled fields that show if cookies and Java 
+        are enabled on the browser respectivly. Additionally, online field shows if the browser is online, and language gives the language of the browser. Finally, there are many methods for getting the 
+        version of the browser the visitor is using, but they are all depreated, so don't use them.
+    </p>
+    <hr>
+
+    <h3>Cookies</h3>
+    <p>Cookies are a way to store information about a user for future use, even between website visits. All cookies on a page are saved in one long string and contain a name, value, and an experation time 
+        (by default this is when the webpage closes). Included below are sample functions that could be used to set and get a cookie.
+    </p>
+    <p>Note that cookies don't work when cookies aren't enabled. You can check this with navigator.cookieEnabled.</p>
+    <pre>
+        <code>
+            function setCookie(cname, cvalue, exdays) {
+                const d = new Date();
+                d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+                let expires = "expires="+d.toUTCString();
+                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+              }
+              
+              function getCookie(cname) {
+                let name = cname + "=";
+                let ca = document.cookie.split(';');
+                for(let i = 0; i &lt; ca.length; i++) {
+                  let c = ca[i];
+                  while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                  }
+                  if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                  }
+                }
+                return "";
+              }
+        </code>
+    </pre>
+    <hr>
+
+    <h3>Fetch API</h3>
+    <p>The Fetch API allows you to easily send files between a web server and a website using fetch(url, [options]) (options isn't required). This returns a Responce object that can be turned into 
+        various datatypes with methods like responce.json(), responce.text(), responce.FormData(), or responce.blob(). These are built on promises, so you don't have include some of that syntax, but you do 
+        have to either 1) await the fetch method and whatever method you use to transform the type of the responce or 2) use .then() for every line that uses the fetched data. The responce object also contains 
+        the status and ok fields that give the HTTP code or just if the responce was valid or not.
+    </p>
+    <p>Additionally, you can use the Fetch API to send data back to an address utilzing the options by including {method: 'POST', 'body': dataToSend}. Idk if this also sends data back to you, I'd assume a 
+        good API would send some kind of confirmation or this might be a trade and you also get some data to process, but that's for later me to figure out.
+    </p>
+    <p>Note for all of these, if you want to use await, which in my opinion is the cleaner option, remember that await can only* be used inside of an async function.</p>
+    <hr>
+
+    <h3>Sending Form Data with FormData</h3>
+    <p>FormData is a datatype used to contain data from HTML forms and contains a variety of methods. For example you can add or remove fields with append() and remove(), or get the value of a field with 
+        get() or has() (has looks if the field exists, get gives the value). One of the primary functions of FormData, though, is its use with fetch() to send the form responce to a server with 
+        fetch(url, { method: 'POST', body: new FormData(form)}). 
+    </p>
+
+
+</body>
+</html>

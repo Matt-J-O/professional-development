@@ -1,0 +1,13 @@
+body {
+    background-color: gray;
+     color: white;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 5px;
+}
+tr :hover {
+    background-color: #546969;
+}

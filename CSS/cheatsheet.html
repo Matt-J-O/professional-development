@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Cheatsheet</title>
+    <link rel="stylesheet" href="cheatsheet.css">
+    <link rel="shortcut icon" href="https://static.wikia.nocookie.net/wizardoflegend_gamepedia_en/images/b/b1/Prestigious_Diploma.png/revision/latest?cb=20190324002713" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Matthew Owen">
+
+    <!--Turn on refresh for easier updates when adding new info.-->
+    <!--<meta http-equiv="refresh" content="30"> -->
+</head>
+<body>
+    <h1>CSS Cheatsheet</h1>
+    <p>This is notes/ a guide to some basic CSS stuff to look back on.</p>
+    <hr>
+    <br>
+    <h2>Table of Contents</h2>
+    <p><a href="#HTML">From HTML Page: List of Style Elements</a></p>
+    <p><a href="#B_Canvas">From HTML Page: Basic Canvas and SVG Information</a></p>
+    <p><a href="#Basic">More Basic CSS</a></p>
+    <p><a href="#Responsive">Responsive Web Design</a></p>
+    <hr>
+
+
+    <h2 id="HTML">From HTML Page: List of Style Properties</h2>
+
+    <h3>Color</h3>
+    <p style="color: palegreen;">Changes the color of a piece of text. Can also be used in the body tag to change all the text for the page.
+        Note for all the color ones, the color can be defined by hex (#ffffff), rgb (rgb(255, 12, 72, 1)), hsl (hsl(9, 100%, 64%)), or by pre-defined color names (tomato, palegreen)
+    </p>
+    <hr>
+
+    <h3>Border</h3>
+    <p style="border: 2px solid tomato;">Addes a border, a little rectange, around the element. You define the width of the border in pixels, the color and if it's solid that color. 
+        Also, borders exists for each direction (top, bottom, left, right).</p>
+    <hr>
+
+    <h3>Border-Radius</h3>
+    <p style="border: 2px solid tomato; border-radius: 10px;">Addes rounded corners to borders</p>
+    <hr>
+
+    <h3>Border-Style</h3>
+    <p style="border: 2px tomato; border-style: dotted;">Defines the type of line used in the borders: solid, dotted, dashed, double, groove, ridge, inset, outset, none, hidden (default)</p>
+    <hr>
+
+    <h3>Border-Width</h3>
+    <p style="border-style: solid; border-width: 1px 3px;">Chooses the width the a border, entering two values put its first for the top and bottom of the border, and the second value for the sides.</p>
+    <hr>
+
+    <h3>Border-Color</h3>
+    <p style="border: solid 2px; border-color: paleturquoise palegoldenrod palegreen palevioletred;">Defines the colors of the borders,
+         can have up to 4 values for the top, right, bottom, and left sides.</p>
+    <hr>
+
+    <h3>Border-Image</h3>
+    <p style="border: 5px solid transparent; border-image: url('https://www.w3schools.com/css/border.png') 30 round;">Defines an image to use as a border instead of a line.
+        Formatted as image url, where to cut border image, property. Round repeats the non-corner elements, stretch streches the non-corner elements (this uses round).
+    </p>
+
+    <h3>Padding</h3>
+    <p style="border: 2px solid tomato; padding: 30px;" >Defines, in pixels, the space between the text and a border element. Also, padding exists for each direction (top, bottom, left, right).</p>
+    <hr>
+
+    <h3>Box-Sizing</h3>
+    <p>Set the box-sizing property to border-box to ensure your element stays a desired size, and padding doesn't make it take up more space.</p>
+    <hr>
+    
+    <h3>Margin</h3>
+    <p style="border: 2px solid tomato; margin: 50px;" >Defines the margin outside of a border.</p>
+    <p>It effects how close it is to other elements. There are also properties for margins of each side of the border.</p> 
+    <p>Auto will horizonally center the element, inherit will give it the margin of its parent element (ex. a header in a div).
+        To center images, margin-left and margin-right need to be set to auto.</p>
+    <hr>
+
+    <h3>Border-Collapse</h3>
+    <p>Used to prevent borders next to each other creating a double border effect (like in a table).</p>
+    <hr>
+
+    <h3>Outlines</h3>
+    <p>Outlines are lines drawn around borders, and have the same elements as a border (style, color, width) and offset, the space between a border and an outline.</p>
+    <hr>
+
+    <h3>Link Colors</h3>
+    <p>The color of links in different states can be changed with a:link, a:visited, a:hover, or a:active in a style sheet. This also works in buttons.</p>
+    <hr>
+
+    <h3>Font-Family</h3>
+    <p style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Defines the font used on the page or in a piece of text.</p>
+    <hr>
+
+    <h3>Font-Size</h3>
+    <p style="font-size: 120%;">Changes the font size of the text. Can be defined by a size in pixels (better for single lines) or modified their base size by a percentage (font-size: 300%;).
+        Can also be defined by viewport width (vw) which is more accomodating to more devices, or em (1 em is 16px (sta)).
+    </p>
+    <hr>
+
+    <h3>Text-Align</h3>
+    <p style="text-align: center;">Changes the text alignment like left, center, right, etc.</p>
+    <hr>
+
+    <h3>Float</h3>
+    <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/800px-HTML5_logo_and_wordmark.svg.png" alt="HTML Logo" style="float: right; width: 100px;height: 100px;">
+        Makes an image float to the left/right of text. Can also use width/height in style to size images to prevent issues with style sheets.</p>
+    <hr>
+
+    <h3>Background-Image</h3>
+    <p>Makes the background of the page to an image, formatted like url('link'). 
+        <br>background-color: change the base color of a webpage
+        <br>background-repeat: no-repeat can be used to stop a small image from repeating along the screen.
+        <br>background-attachment: fixed can be used to make sure the background image doesn't scroll.
+        <br>background-size: cover or 100% 100% allow it to stretch an image to the size of the screen.
+        <br>background-position: specifies the position of a backgound image if not repeating.
+        <br>Note: the background property can be used to change all of these in one declaration (ex: background: #ffff00 url("img_link") no-repeat right top;). 
+        Additional note, you can also have multiple background-images, separated by commas (i.e (url(img 1), url(img 2)) (right bottom, left top)).
+    </p>
+    <hr>
+
+    <h3>@Media</h3>
+    <p>Not a tag in style, but you can use @media screen to check the resolution of the screen to do different things with style similar to picture element stuff.</p>
+    <hr>
+    <br>
+
+    <h2 id="B_Canvas">From HTML Page: Basic Canvas and SVG Information</h2>
+
+    <h3>Canvas</h3>
+    <p>A canvas element is a container in which to draw graphics on the fly with JavaScript.
+        An example of how to declare a canvas is as follows: &lt;canvas id='name' width='x' height ='y' style='border:1px solid #000000;'&gt;.
+    </p>
+    <hr>
+
+    <h3>Drawing on a Canvas</h3>
+    <p>To draw on the canvas, Javascript code has to be written. The following code, for example, would draw a line diagionally across the canvas.</p>
+    <pre>
+        <code>
+            var canvas=document.getElementById('myCanvas');
+            var pen=canvas.getContext('2d');
+            pen.moveto(0,0);
+            pen.lineto(100,100);
+            pen.stroke();
+        </code>
+    </pre>
+    <hr>
+
+    <h3>Moveto and Lineto</h3>
+    <p>In the canvas, the moveTo method moves the pen object to a specific point, and the lineTo method makes a line from where the pen is to a point specific point.</p>
+    <hr>
+
+    <h3>BeginPath, Arc, and Stroke</h3>
+    <p>In the canvas, the beginPath method is used to reset/set a path for the pen object, and arc defines a arc to be drawn on the canvas that is confirmed with the stroke method.
+        In the arc method, the following values are taken: pen.arc(x,y,radius,start angle, end angle) (the angles are in radians, 0 to 2&pi; is a circle, the arcs go backwards from what I'd expect).
+    </p>
+    <hr>
+
+    <h3>Drawing Text</h3>
+    <p>To draw text on a canvas, you first need to define a font size and family (pen.font="30px Arial";) 
+        and then you call either stroketext or filltext with the text and the x,y of the bottom left of the text. Below is what both methods look like</p>
+    <canvas id="canvas" width="150" height="100" style="border: 1px solid black;">
+        <script>
+            var canvas=document.getElementById('canvas');
+            var pen=canvas.getContext('2d');
+            pen.font="24px Arial";
+            pen.fillText("FillText",10,40);
+            pen.strokeText("StrokeText",10,80);
+        </script>
+    </canvas>
+    <hr>
+
+    <h3>Gradients</h3>
+    <p>You can make gradients in HTML using the createLinearGradient function, which takes the x,y of the beginning and end of the gradient (usually something like 0,0,x,0).
+        Color stops need to be added with addColorStop, which 1)defines the colors of the gradient, and 2) makes it visable when used in a fill like in fillRect by editing the fillStyle.</p>
+    <p>Additionally, a circular gradient can be made with createRadialGradient by defining the x,y and raidus of the starting and ending circles 
+        (usually the x and y are similar, but r1 is small and r2 is large(r)).</p>
+    <hr>
+
+    <h3>Images in Canvas</h3>
+    <p>An image can be drawn in a canvas by getting the id in the same way you get the id of the canvas, and by utilizing the drawImage function (pen.drawImage(img,x,y)).</p>
+    <hr>
+
+    <h3>SVG</h3>
+    <p>An SVG element contains SVG graphics, XML-based vector graphics that, since they are vector-based, they don't lose quality when they are resized.</p>
+    <hr>
+
+    <h3>SVG Examples</h3>
+    <p>Included below are some code snippets of SVG elements and what they produce on the screen.</p>
+    
+    <p><b>Create a circle:</b></p>
+    <pre>
+        <code>
+            &lt;svg width="80" height="80"&gt;
+                &lt;circle cx="40" cy="40" r="20" stroke="green" stroke-width="2" fill="red" /&gt;
+            &lt;/svg&gt;
+        </code>
+    </pre>
+    <svg width="80" height="80">
+        <circle cx="40" cy="40" r="20" stroke="black" stroke-width="4" fill="red" />
+    </svg>
+    <hr>
+
+    <p><b>Create a rectangle:</b></p>
+    <pre>
+        <code>
+            &lt;svg width="80" height="80"&gt;
+                &lt;rect cx="10" cy="10" width="60" height="30" stroke="black" stroke-width="4" fill="green" /&gt;
+            &lt;/svg&gt;
+        </code>
+    </pre>
+    <svg width="80" height="50">
+        <rect x="10" y="10" width="60" height="30" stroke="black" stroke-width="4" fill="green" />
+    </svg>
+    <hr>
+
+    <p><b>Create a fancy square:</b></p>
+    <pre>
+        <code>
+            &lt;svg width="80" height="80"&gt;
+                &lt;rect x="10" y="10" rx = "10" ry="10" width="80" height="80" 
+                style="fill: green; stroke: black; stroke-width: 4; opacity: 0.5;"/&gt;
+            &lt;/svg&gt;
+        </code>
+    </pre>
+    <svg width="80" height="80">
+        <rect x="10" y="10" rx = "10" ry="10" width="60" height="60" 
+        style="fill: cadetblue; stroke: black; stroke-width: 4; opacity: 0.5;"/>
+    </svg>
+    <hr>
+
+    <p><b>Create a star:</b></p>
+    <pre>
+        <code>
+            &lt;svg width="120" height="120"&gt;
+                &lt;polygon points="40,10 20,60 70,30 10,30 60,60"
+                style="fill: cadetblue; stroke: black; stroke-width: 4; fill-rule: evenodd;"/&gt;
+            &lt;/svg&gt;
+        </code>
+    </pre>
+    <svg width="120" height="120">
+        <polygon points="40,10 20,60 70,30 10,30 60,60"
+        style="fill: palegoldenrod; stroke: black; stroke-width: 4; fill-rule: evenodd;"/>
+    </svg>
+    <hr>
+
+    <p><b>Create an ellipse with gradient and text:</b></p>
+    <pre>
+        <code>
+            &lt;svg width="500" height="130"&gt;
+                &lt;defs&gt;
+                    &lt;linearGradient id="gradSVG"&gt;
+                        &lt;stop offset="0%" stop-color="orange"/&gt;
+                        &lt;stop offset="100%" stop-color="purple"/&gt;
+                    &lt;/linearGradient&gt;
+                &lt;/defs&gt;
+                &lt;ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#gradSVG)"/&gt;
+                &lt;text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86"&gt;Text&lt;/text&gt;
+            &lt;/svg&gt;
+        </code>
+    </pre>
+    <svg width="500" height="130">
+        <defs>
+            <linearGradient id="gradSVG">
+                <stop offset="0%" stop-color="orange"/>
+                <stop offset="100%" stop-color="purple"/>
+            </linearGradient>
+        </defs>
+        <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#gradSVG)"/>
+        <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">Text</text>
+    </svg>
+    <hr>
+    <br>
+
+    <h2 id="Basic">More Basic CSS</h2>
+
+    <h3>Selectors</h3>
+    <p>In a stylesheet, a selector controls what elements are being modified by your CSS code. There are many different kinds and they will be listed here:</p>
+    <dl>
+        <dt>Name, Class, Id</dt>
+        <dd>The code edits all elements with the same name/class/id as the selector. i.e editing all paragraphs with p</dd>
+        <dt>*</dt>
+        <dd>* is the universal selector, it edits all elements on a webpage</dd>
+        <dt>Grouping</dt>
+        <dd>You can group multiple selectors together to modify them in the same way i.e h1,h2,h3 {}</dd>
+        <dt>Descendant Combinator (a b)</dt>
+        <dd>Edits all of element b that are descendants of elements a (div p {} edits all paragraphs in div elements)</dd>
+        <dt>Child Combinator (a > b)</dt>
+        <dd>Edits all of element b that are children of element a (div > p)</dd>
+        <dt>Next Sibling Combinator (a + b)</dt>
+        <dd>Edits all of element b that is next to element a (div + p edits all paragraphs immedietly following a div)</dd>
+        <dt>Subsequent-Sibling Combinator (a ~ b)</dt>
+        <dd>Edits all of element b that appear after an element a (div ~ p edits all paragraphs after the first div on the page)</dd>
+        <dt>First-child</dt>
+        <dd>A psudo-class that selects the first-child of a specifed element (div p:first-child would select the first paragraph in every div)</dd>
+        <dt>Lang</dt>
+        <dd>A psudo-class that allows you to define different rules for websites in different languages.</dd>
+        <dt>Focus</dt>
+        <dd>A psudo-class that describes when a text-box is clicked on and your in the state where you can type in it.</dd>
+        <dt>First-line</dt>
+        <dd>A pseudo-element that indicates the first line of a paragraph</dd>
+        <dt>First-letter</dt>
+        <dd>Like first-line but for the first letter</dd>
+        <dt>Before</dt>
+        <dd>A pseudo-element that indicates to do something before the specified element (like put a picture before each header)</dd>
+        <dt>After</dt>
+        <dd>Like before, but for after each specified element</dd>
+        <dt>Marker</dt>
+        <dd>Selects the markers of list elements (bullet points, number in ordered lists etc.)</dd>
+        <dt>Selection</dt>
+        <dd>Denotes the area that is selected (highlighted) by the user.</dd>
+    </dl>
+    <hr>
+
+    <h3>Pseudo-classes</h3>
+    <p>Pseudo-classes are states an object can be in, but aren't always, like a link being visited or not, or an element being hovered over.
+        They can be combined with default selectors to make more specific modifications. 
+        Examples include: a:visited (a link that has been visited over), div.highlight:hover (a div in the highlight class that is being hovered over)
+    </p>
+    <hr>
+
+    <h3>Pseudo-elements</h3>
+    <p>Pseudo-elements are used to style specific parts of an element, such as the first line of a paragraph. They can be combined with selectors like pseudo-classes.
+        Examples include: ::selection (any text that the user highlights), h1::after (place something after each h1 header), etc.
+    </p>
+    <hr>
+
+    <h3>Attribute Selectors</h3>
+    <p>Attribute selectors select elements by their attributes, and there are various modifiers to attribute selectors. A list of examples is kept below.</p>
+    <ul>
+        <li><b>a[target]</b> selects all links with a target attribute</li>
+        <li><b>a[target="_blank"]</b> selects all links with a target attribute of blank</li>
+        <li><b>[title~="flower"]</b> selects all elements with an title that contains the word "flower" (wouldn't select "flowery")</li>
+        <li><b>a[class|="top"]</b> selects all elements with class of either equal to "top" or "top-..."</li>
+        <li><b>a[class^="top"]</b> selects all elements with a class that starts with/is "top"</li>
+        <li><b>a[class$="test"]</b> selects all elements with a ends with/is "test"</li>
+        <li><b>a[class*="text"]</b> selects all elements with a class that contains/is "text"</li>
+    </ul>
+    <hr>
+
+    <h3>Comments</h3>
+    <p>Comments in CSS are not the same as comments in HTML, which is a bit annoying. For CSS though, the comments are simple just /*this*/.
+         Even in an HTML file, in the style element, you use the CSS comments.</p>
+    <hr>
+
+    <h3>Text-Decoration</h3>
+    <p style="text-decoration: underline dashed palegreen;">Used to define things like underline, overline and/or line-through text</p>
+    <p>Text-decoration-color defines the color of these decoration lines, and text-decoration-style tells it what kind of line to use, like the ones for borders,
+        text-decoration-thickness defines how thick the underline is (auto, x%, #px), but these can all be defined in the text-decoration property.
+    </p>
+    <p>Note: all links are underlined by default, so you can do text-decoration: none; to avoid that if you want to.</p>
+    <hr>
+
+    <h3>Text-transformation</h3>
+    <p>You can use the text-transformation property to automatically make all text in an element lowercase, uppercase, or capitalize(d).</p>
+    <hr>
+
+    <h3>Text Spacing Properties</h3>
+    <p>There are a variety of CSS porperties that affect the spacing of text in an element. Below is a list of them.</p>
+    <dl>
+        <dt>text-indent</dt>
+        <dd>Adds an indent to the first line of text, like a tab.</dd>
+        <dt>letter-spacing</dt>
+        <dd>Edits the space between characters.</dd>
+        <dt>line-height</dt>
+        <dd>Edits the space between lines of text in an element.</dd>
+        <dt>word-spacing</dt>
+        <dd>Edits the space between words in text.</dd>
+        <dt>white-space</dt>
+        <dd>Defines how white space is handled in text; nowrap disables text wrapping.</dd>
+    </dl>
+    <hr>
+
+    <h3>Text-shadows</h3>
+    <p style="text-shadow: 2px 2px black;">The text-shadow property takes two values to create a horizonal and vertical shadow effect on the text.</p>
+    <p style="text-shadow: 2px 2px 3px palegoldenrod;">You can also edit the color of the shadow and add a blur effect (of a px size) to the shadow</p>
+    <p>You can also do the same with the box elements, like divs, by using the box-shadow property instead.</p>
+    <hr>
+
+    <h3>Web Safe Fonts</h3>
+    <p>You can use whatever font you want on a website, but it's probably a good idea to have a backup font or two in the font-family property (Ex. Arial, Helvetica, sans-serif).
+         Included here is a list of fonts that are web safe sorted by font type:</p>
+    <p><b>Sans-serif:</b></p>
+    <p style="font-family: Arial;">Arial: Lorem ipsum dolor sit amet. My favorite number is 1,432,680,957.</p>
+    <p style="font-family: Verdana;">Verdana: Lorem ipsum dolor sit amet. My favorite number is 1,432,680,957.</p>
+    <p style="font-family: Tahoma;">Tahoma: Lorem ipsum dolor sit amet. My favorite number is 1,432,680,957.</p>
+    <p style="font-family: Trebuchet MS;">Trebuchet MS: Lorem ipsum dolor sit amet. My favorite number is 1,432,680,957.</p>
+    <p><b>Serif:</b></p>
+    <p style="font-family: Times New Roman;">Times New Roman: Lorem ipsum dolor sit amet. My favorite number is 1,432,680,957.</p>
+    <p style="font-family: Geprgia;">Georgia: Lorem ipsum dolor sit amet. My favorite number is 1,432,680,957.</p>
+    <p style="font-family: Garamond;">Garamond: Lorem ipsum dolor sit amet. My favorite number is 1,432,680,957.</p>
+    <p><b>Monospace:</b></p>
+    <p style="font-family: Courier New;">Courier New: Lorem ipsum dolor sit amet. My favorite number is 1,432,680,957.</p>
+    <p><b>Cursive:</b></p>
+    <p style="font-family: Brush Script MT;">Brush Script MT: Lorem ipsum dolor sit amet. My favorite number is 1,432,680,957.</p>
+    <hr>
+
+    <h3>Google Fonts</h3>
+    <p>If you want to use a font that is not supported by a browser, you can import from a service, like Google Fonts for example.
+        To do this, you make a link element like so: &lt;link rel="stylesheet" href"http://fonts.googleapis.com/css?family=[FONTNAME_A]|family=[FONTNAME_B]&effect=[EFFECT_NAME]"&gt;
+    </p>
+    <p>This lets you import mulitple fonts at once, and you can use effects with these imported fonts, like a neon effect.</p>
+    <hr>
+
+    <h3>Font Pairings</h3>
+    <p>It's important to picks fonts that go well together. I could go thought the effort of picking good combos myself or take something from something like 
+        <a href="https://www.w3schools.com/css/css_font_pairings.asp" target="_blank">this</a>
+    </p>
+    <hr>
+
+    <h3>Icons</h3>
+    <p>In a similar way to how you add fonts, you can add icons to use in text. Once they are imported (an example import is shown below) they are used with an i element.</p>
+    <p>Google icons, for example are used like &lt;i class="material-icons"&gt;[ICON NAME]&lt;i&gt;
+    </p>
+    <p>&lt;link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"&lt;</p>
+    <hr>
+
+    <h3>List Styling</h3>
+    <p>The list style property is a shorthand property that contains multiple elements of styling lists; list-style-type defines what the bullet points in a list look like,
+        list-style-image replaces the bullet points in a list with an image (will use list-style-type if image can't be loaded),
+        list-style-position determines if the bullet points are included inside or outside of the list element (determines if it'd be inside of borders or not). 
+    </p>
+    <hr>
+
+    <h3>Overflow</h3>
+    <p>Some elements, like tables, can be given scroll bars, so they can be longer horizonally than the screen using the style property overflow-x:auto;.
+        Overflow itself has a couple possible values that will affect how overflow values display. <b>Visable</b> means the extra data falls outside of the element and is displayed below (and is default).
+        <b>Hidden</b> removes all data that is falls outside of the predefined size of the element (like a div). <b>Scroll</b> creates a scroll bar for vertical and horizonal access, 
+        and <b>auto</b> creates a scroll bar, if overflow data exists.
+    </p>
+    <hr>
+
+    <h3>Display Attributes</h3>
+    <p>The display property changes the default method for how an element is placled on screen (inline vs block etc.). Included below is a list of display values and how they affect the element.</p>
+    <dl>
+        <dt>Inline</dt>
+        <dd>Displays an element inline (doesn't make its own line)</dd>
+        <dt>Block</dt>
+        <dd>Displays an element in its own line.</dd>
+        <dt>Contents</dt>
+        <dd>Makes the element disappear, but not any of that element's children. Makes said children move up one level.</dd>
+        <dt>Flex</dt>
+        <dd>Displays the element as a block-level flex container.</dd>
+        <dt>Grid</dt>
+        <dd>Displays the element as a block-level grid container.</dd>
+        <dt>Inline-block</dt>
+        <dd>Displays the element inline, but you can give the element a width and height value.</dd>
+        <dt>Inline-flex</dt>
+        <dd>Like flex, but displayed inline.</dd>
+        <dt>Inline-grid</dt>
+        <dd>Like grid, but displayed inline.</dd>
+        <dt>Inline-table</dt>
+        <dd>The element is displayed as an inline table.</dd>
+        <dt>List-item</dt>
+        <dd>Let the element behave like an <i>li</i> element</dd>
+        <dt>Run-in</dt>
+        <dd>Behaves as inline or block depending on context. What context? Idk.</dd>
+        <dt>Table</dt>
+        <dd>Let the element behave like a <i>table</i> element.</dd>
+        <dt>Table-caption</dt>
+        <dd>Let the element behave like a <i>caption</i> element.</dd>
+        <dt>Table-column-group</dt>
+        <dd>Let the element behave like a <i>colgroup</i> element.</dd>
+        <dt>Table-header-group</dt>
+        <dd>Let the element behave like a <i>thead</i> element.</dd>
+        <dt>Table-footer-group</dt>
+        <dd>Let the element behave like a <i>tfoot</i> element.</dd>
+        <dt>Table-row-group</dt>
+        <dd>Let the element behave like a <i>tbody</i> element.</dd>
+        <dt>Table-cell</dt>
+        <dd>Let the element behave like a <i>td</i> element.</dd>
+        <dt>Table-column</dt>
+        <dd>Let the element behave like a <i>col</i> element.</dd>
+        <dt>Table-row</dt>
+        <dd>Let the element behave like a <i>tr</i> element.</dd>
+        <dt>None</dt>
+        <dd>The element is completely removed.</dd>
+        <dt>Initial</dt>
+        <dd>Sets the display to the default for the element.</dd>
+        <dt>Inherit</dt>
+        <dd>Inherit the display value of its parent element.</dd>
+    </dl>
+    <hr>
+
+    <h3>Max-width</h3>
+    <p>When dealing with small screens, using the width property (with px values) can lead to an element being too big for the screen and having to scroll horizonally to read it.
+        To prevent this, you can replace the width with max-width, which will make the element either the width of screen or the width you set, whatever is smaller.</p>
+    <hr>
+
+    <h3>Position</h3>
+    <p>The position property changes where the element is placed on the screen depening on various factors.</p>
+    <p>Position: <b>static</b> is the default behavior of elements.</p>
+    <p>Position: <b>relative</b> keeps the default behavior, except the left, right, top, and bottom properties can be altered to move the element said amount from its default position.</p>
+    <p>Position: <b>fixed</b> keeps the element in its same position reguardless of where you are on the page, you can use the left, right, top, and bottom elements to position it.</p>
+    <p>Position: <b>absolute</b> works like fixed, but for the nearest anchor element, like a div.</p>
+    <p>Position: <b>sticky</b> is displayed like a releative element, until a certain scroll position, from which it says in that position on the page, like a fixed element.</p>
+    <hr>
+
+    <h3>Z-index</h3>
+    <p>The z-index value of items determines in what order they will be placed on the screen, that value can be positive or negative and the elements are placed from lowest to highest z-index.
+        This would be good for making a small background image around a piece of text, for example. Without z-indexing, the elements are placed from top to bottom in the HTML code.
+    </p>
+    <hr>
+
+    <h3>Clear and Clearfix</h3>
+    <p>The clear property effects how elements interact with other elements with the float property. By default (clear: none), elements are not pushed below elements that are floated left/right,
+        but clear can be set to left/right/both to be pushed below left/right/either float elemenets.
+        Sometimes, you want to put an element with float in a div, but if the element is too big, it will overflow out of the div. Try using this code wth the div.
+    </p>
+    <pre>
+    <code>
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+        }
+    </code>
+    </pre>
+    <hr>
+
+    <h3>Sprites</h3>
+    <p>To save on server requests for multiple images, multiple small images can be combined into a sprite sheet. You can then use left and width values to select only the sprite you want to use.</p>
+    <p>Example: #img 1 {left: 0px; width:50px; ...} #img 2 {left: 50px; width: 50px; ...}.</p>
+    <hr>
+
+    <h3>Counters</h3>
+    <p>In CSS, you can create counters that increment by declaring various elements in order to do things like number sections in an article. 
+        x{<b>Counter-reset</b>: name} declares a counter called name that resets whenever the x element the counter-reset property is declared. 
+        x{<b>Counter-increment</b>: name} add one to the counter called name whenever the x element is declared. 
+        In the content property, the <b>counter(name)</b> function can be called to get the value of the counter 'name'.</p>
+    <hr>
+
+    <h3>Specificity</h3>
+    <p>If multiple selectors conflict in how they modify a specific element, the one with the most specifity will win out. The hierarcy of that is as follows:</p>
+    <p>inline elements &rArr; id selector &rarr; (pseudo) class selector &rarr; attribute selectors (type="text") &rarr; (pseudo) element selectors.</p>
+    <p>The <b>!important</b> flag can be added to a porperty to ignore any specifity rules and apply that rule to an element.</p>
+    <hr>
+
+    <h3>Math Functions</h3>
+    <p>There are variety of simple math functions you can do in CSS for various reasons. Listed below are a small selection thereof:</p>
+    <dl>
+        <dt>Calc</dt>
+        <dd>Performs the calculation in the input (width: calc(100% - 100px))</dd>
+        <dt>Max/Min</dt>
+        <dd>Selects the biggest/smallest value from a list of values (width: max(50%, 300px))</dd>
+    </dl>
+    <hr>
+
+    <h3>Backgrounds for Divs</h3>
+    <p>Backgrounds can be added to elements that aren't the body, using all of the properties that are listed in previous sections with the adition of two new ones, 
+        background-origin (for images) and background-clip (for colors). Both have three possible values: border-box, padding-box and context-box.
+         Border-box means that the background starts at the edge of the border, padding-box means the background starts at the edge of the padding, and context-box means it starts at the edge of the content (based on the box model).
+    </p>
+    <hr>
+
+    <h3>Color Keywords</h3>
+    <p>When inputting a color there are a few special keywords that can be used. <b>Currentcolor</b> holds the current value of the color property of the element (so a border could be made the same, for example).
+    Transparent insets rgb(0,0,0,0) for the color of an element, making it invisible, which has its uses.</p>
+    <hr>
+
+    <h3> Linear-Gradient(s)</h3>
+    <div style="background-image: linear-gradient(to left, cadetblue, crimson);">
+        <p>Beyond other options you can create gradients in CSS. Linear gradients can be made with the linear-gradient(direction(optional), color 1, color 2, ...) command (here its in background-image).
+            Angle can either be an angle in degrees or keywords such as to right, to top left, or to bottom right.
+        </p>
+    </div>
+    <hr>
+
+    <h3> Radial-Gradient(s)</h3>
+    <div style="background-image: radial-gradient(violet, crimson);">
+        <p>Radial gradients come from the center and go outward, you can define how much space is between each color step using percents after each color (example: red 5%, blue 15%, green 50%).
+            You can also use the keywords closest-side, farthest-side, closest-corner, or farthest-corner to affect the size of the gradient,
+             as well as add circle to change the shape of the gradient to a circle from an elpise.</p>
+    </div>
+    <hr>
+
+    <h3> Conic-Gradient(s)</h3>
+    <div style="background-image: conic-gradient(cadetblue, violet, crimson); border-radius: 50%;">
+        <p>Conic Gradients look kinda like pie charts. They default each color to be evenly spaced apart, but you can give degrees in (x)deg format to space out each color break.
+            If you add border-radius equals 50% to the radius, it will look exactly like a pie chart. You can also move the center of the conic gradient with at x% y%.
+        </p>
+    </div>
+    <hr>
+
+    <h3>Repeating Gradients</h3>
+    <div style="background-image: repeating-linear-gradient(to right, cadetblue, crimson 20%);">
+        <p>For any of the gradient styles, you can add repeating- to the function to make it repeat the same colors you provide over and over again.
+             It just needs a % at the end of the last color to show how much space each repetition should take up (i.e red ,blue 20%).
+        </p>
+    </div>
+    <hr>
+
+    <h3>Text-Overflow</h3>
+    <p>When overflow text is hidden from an element (using overflow: hidden;), the text-overflow property determines how to display that text is hidden.
+        Clip cuts off the text at the length of the textbox, while ellipsis adds a ... to the end of the text to show some is missing.</p>
+    <hr>
+
+    <h3>Word-Wrap and Word-Break</h3>
+    <p>The word-wrap property allows for long words to be broken and wrapped onto the next line if set to break-word.</p>
+    <p>The word-break property defines some line breaking rules, keep-all will break on hyphen and spaces, while break-all will break on any character.</p>
+    <hr>
+
+    <h3>Writing-Mode</h3>
+    <p>The writing-mode property allows for some text to be written vertically using <span style="writing-mode: vertical-rl;">vertical-rl</span> or
+         <span style="writing-mode: vertical-lr;">vertical-lr</span>.</p>
+    <hr>
+
+    <h3>Alternative Fonts</h3>
+    <p>If you want to use a font that is isn't default on a browser, instead of grabbing it from something like the Google API every single time, you can also download the font file
+        and declare it in your stylesheet. You do this by making a @font-face rule, where you specify the font-family, the name your giving the font, and the src, the link to the font file.
+        You can also add things like font-weight:bold if you are adding a bold font or font-style:italic for an italic font.
+    </p>
+    <hr>
+
+    <h3> The Transform Property</h3>
+    <p>The transform property allows you to move/rotate elements in a variety of ways. Listed below are some of the possible functions usable with the transform property</p>
+    <dl>
+        <dt>Translate(x,y)</dt>
+        <dd>Moves the element x and y pixels on the x and y axis.</dd>
+        <dt>Rotate(x)</dt>
+        <dd>Rotates the element x degrees clockwise(formatted like 20deg). Can also use negative values for counter-clockwise rotation.</dd>
+        <dt>Scale(x,y)</dt>
+        <dd>Increase the size of the element by a factor of x horizonally and y vertically.</dd>
+        <dt>ScaleX(x)/ScaleY(y)</dt>
+        <dd>The same as scale, but only for one dimension.</dd>
+        <dt>Skew(x,y)</dt>
+        <dd>Skews(kinda tilts) the element by x degrees on the x axis and y degrees on the y axis.</dd>
+        <dt>SkewX(x)/SkewY(y)</dt>
+        <dd>Like the skew function but only for one axis.</dd>
+        <dt>Matrix()</dt>
+        <dd>Combines all of the previous transformations into one function in the order matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY()).</dd>
+        <dt>RotateX(x)/RotateY(y)/RotateZ(z)</dt>
+        <dd>Rotates the element in 3D space in the specified axis by x degrees.</dd>
+    </dl>
+    <hr>
+
+    <h3>Transitions</h3>
+    <p>When the property of an element changes, it can be accompanied by a little animation called a transition. It is specified by the transition property and you give 
+         1) the property or properties you want the transition(s) for and 2) how long you want the transition to take (for each property). An example is shown below.</p>
+    <div id="transition"></div>
+    <hr>
+
+    <h3>Transition-Timing-Function(s)</h3>
+    <p>The transition-timing-function defines the speed curve of the transition effect. <b>Ease</b>, which is the default, starts slow, then goes faster, and then ends slow.
+        <b>Ease-in</b> and <b>ease-out</b> have a slow start and end respectivly and <b>ease-in-out</b> has both without speeding up as much in the middle.
+        Finally, <b>linear</b> goes a constant speed throughout the transition and <b>cubic-bezier(n,n,n,n)</b> lets you define your own speed function.
+    </p>
+    <hr>
+
+    <h3>Animations</h3>
+    <p>Animations are more involved than transitions, but allow for more control. They start with a @keyframes rule that you give a name and define keyframes.
+        Keyframes are the states that the animation will move between like, in the example below, the element being a blue square and a green rectangle.
+        These are defined in brackets and can either be done with from and to if there are only two states, or by using a percent-way through the animation.
+    </p>
+    <p>Then, you give define the <b>animation-name</b> property as the name you gave to the keyframes rule and define other animation properties,
+         like <b>animation-duration</b>, how long the animation lasts, <b>animation-iteration-count</b>, how many times an animation is played (infinite for continued playing), 
+        <b>animation-timing-function</b>, which defines the timing function like transition-timing-function, <b>animation-direction</b>, 
+        the order it plays the keyframes (normal, reverse, alternate, alternate-reverse), <b>animation-delay</b>, which adds a delay before the animation starts, or <b>animation-fill-mode</b>,
+         which applies the first (backwards), last (forwards) or both the first and last (both) keyframe effects to the element when the animation is done.
+    </p>
+    <div id="animation"></div>
+    <hr>
+
+    <h3>Filter(s)</h3>
+    <p>The filter property allows for the use of various functions to modify how an element (usually intened for pictures, but you can use them on anything) looks.
+        Below is a list of some of these filter functions. </p>
+    <dl>
+        <dt>Blur(Xpx)</dt>
+        <dd>Adds a blur effect to an element like <span style="filter: blur(1px);">this</span>. A bigger value means more blur.</dd>
+        <dt>Brightness(x%)</dt>
+        <dd>Increases/decreases the brightness of an element tp x percent. 0% means the image is completely black; 100% is the default image.</dd>
+        <dt>Contrast(x%)</dt>
+        <dd>Increases/decreaes the contrast of an element in the same way as brightness(). 0% makes the element completely gray.</dd>
+        <dt>Drop-Shadow(Xpx,Ypx,Zpx,color)</dt>
+        <dd>Adds a drop-shadow effect to the element, defined by 2-3 lengths and an optional color field.</dd>
+        <dt>Grayscale(x%)</dt>
+        <dd>Adds a grayscale effect to the image where 0% or 0 is the normal image and 100% or 1 is completely grayscale.</dd>
+        <dt>Hue-rotate(Xdeg)</dt>
+        <dd>Applies a hue rotation to an element, by plotting hue values of the image on a circle and moving them along it x degrees (using HSL). Positive numbers increase hue, negative decrease it.</dd>
+        <dt>Invert(x%)</dt>
+        <dd>Inverts the colors of the image, applied similarly to the grayscale() function.</dd>
+        <dt>Opacity(x%)</dt>
+        <dd>Effects the opacity of an element; 0% is completely transparent, 100% is default image.</dd>
+        <dt>Saturate(x%)</dt>
+        <dd>Modifies the saturation of the colors in the image. 0% is desaturated (gray), 100% is default, and 200% is super-saturated.</dd>
+        <dt>Sepia(x%)</dt>
+        <dd>Adds a sepia filter (warmer, brown/yellow tone) to the image, applied in a similar way to the opacity() function.</dd>
+    </dl>
+    <hr>
+
+    <h3>Clip-Path Property</h3>
+    <p>The clip-path property allows for an element to be cropped into some simple shapes. <b>Circle</b>(x%) crops the element into a circle with a radius of x% of the element's size.
+    <b>Ellipse</b>(x%, y%) creates an ellipse with an horizonal radius of x% of the element's width and a vertical radius of y% of the element's height. 
+    Finally, <b>polygon</b>(x1%, y1%, x2%, y2% ...) lets you define a shape by define x,y points using the % of the elements size.</p>
+    <p>These functions can also be used with the <b>shape-outside</b> property, which effects how text wraps around an element (you'd might want it to be the same shape as the element it wraps around).</p>
+    <hr>
+
+    <h3>Object-fit Property</h3>
+    <p>The object-fit property effects how an element behaves when placed in an element too small to contain it. It can be fill (default), contain, cover, none, or scale-down.
+        Fill resizes the image to the given dimensions, but this can destroy the aspect ratio. Cover crops the image to fit, which keeps resolution and aspect ratio, but content can be lost.
+        Contain resizes the image to fit in the element, while keeping the aspect ratio, but this won't (usually) use all of the avaliable space. None doesn't resize the image (acts like cover if it don't fit),
+        and scale-down uses the smallest of contain or none.
+    </p>
+    <p>The <b>object-position</b> property can be used with object-fit: cover to choose what content is cropped out. It takes two % values that choose the center of the image and the crop is done from there.</p>
+    <hr>
+
+    <h3>Mask-image</h3>
+    <p>A mask is an image (png or svg), linear gradient, or SVG drawing that defines an area in what parts of an image to show and which parts to hide (an example is below).
+        A mask is defined in the div the image is in with the mask-image property. Mask-repeat: no-repeat insures the images is only used once instead of covering the size of the base image.
+        Other properties for the mask exist, like mask-size, mask-origin, or mask-position.
+    </p>
+    <div id="mask">
+        <img src="https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?cs=srgb&dl=pexels-markusspiske-1089438.jpg&fm=jpg" alt="Mask Example" width="100" height="100">
+    </div>
+    <hr>
+
+    <h3>Button Customization</h3>
+    <p>Note that buttons can be customized with a lot of the same properties as divs. Something like this.</p>
+    <div>
+        <button style="float: left; border: 1px solid black; background-color: palegoldenrod; padding: 5px;">These</button>
+        <button style="float: left; border: 1px solid black; background-color: palegreen; padding: 5px;">Are</button>
+        <button style="float: left; border: 1px solid black; background-color: paleturquoise; padding: 5px;">Some</button>
+        <button style="float: left; border: 1px solid black; background-color: palevioletred; padding: 5px;">Buttons</button>
+    </div>
+    <hr style="clear: both;">
+
+    <h3>Div Columns</h3>
+    <div style="column-count: 3; column-gap: 30px; column-rule: 2px solid black;">
+        <p style="column-span: 2;">A div can be broken into a series of columns and different elements can be placed in the different columns.
+             <b>Column-count</b> determines how many columns are in the div, while <b>column-span</b> determines how many columns an element takes up.
+            <b>Column-style</b> defines the border between columns like the border property does. <b>Column-width</b> and <b>column-gap</b> define
+            the width of the columns and the padding between columns respectivly. Finally, <b>column-fill</b> determines what color to fill the columns with.</p>
+        <p style="column-span: 1; font-size: 250%;">This is another element in a different column.</p>
+    </div>
+    <hr>
+
+    <h3>Resize</h3>
+    <div style="resize: both; overflow: auto; border: 2px solid black; padding: 20px;">
+        <p>The resize property lets you resize an element horizonal(ly), vertical(ly), or both depending on its value. Make sure to think about overflow when you enable resize.</p>
+        <p>Note: Some elements (like textarea) have resize on by default, so you can set resize to none to disable that behavior.</p>
+    </div>
+    <hr>
+
+    <h3>Variables</h3>
+    <p>In CSS, you can use variables for all sorts of stuff with the var function. var(--white, #ffffff) would insert the value of the white variable, except if that variable doesn't exist,
+        instead it would insert #ffffff (this second part is optional). To define a variable globally, you can put it in a :root rule as --name: value. You can also define a variable as 
+        --name value in any element, but it will only be usable for that element; this can also be used to temporarly override a global variable.
+    </p>
+    <p>Additionally, Javascript can be used to change CSS variables, specically r = document.querySelector(':root'); will grab all of the variables
+         and r.style.setProperty(--name, newValue); will change the value of the variable. Finally, variables can be changed conditionally in CSS using things like media queries.
+        In them you can use things like minwidth and maxwidth to set new value for variables on different devices.</p>
+    <hr>
+
+    <h3>@Property</h3>
+    <p>To add some functionality, you can create your own properties with the @property rule. Here is an example of how one is defined.</p>
+    <pre>
+        <code>
+            @property --name {
+                syntax: "&lt;datatype&gt;";
+                inherits: true;
+                initial-value: value;
+            }
+        </code>
+    </pre>
+    <p>An example of how this can be used to add new functionality, is to create two new color properties that get used for a gradient and which can be changed with an animation,
+        so you can animate a gradient, which you couldn't without doing this.
+    </p>
+    <hr>
+
+    <h3>Flexbox Design</h3>
+    <p>Flexbox design is a design principal where the webpage is divs within divs for sections of the website. When setting the display property to flex of the container, 
+        it enables the use of a variety of flex-related properties for both flex containers and items.</p>
+    <p>For the container, <b>flex-direction</b> defines how items in the container are displayed: row (left to right), column (top to bottom), reverse-row, or reverse-column. 
+        The <b>flex-wrap</b> property determines if the items in the container will wrap to a new line if the div is too big for the screen or shrink to fit the screen (nowrap).
+        The <b>justify-content</b> property is used to align items horizonally. Center centers the elements while flex-start and flex-end place the elements at the start and end 
+        of the container respectivly. Space-around, space-between, and space-evenly all equally space out the items across the container with the space between them organized slightly differently.
+        <b>Align-items</b> does the same, but vertically. Center and flex-start/end can be used the same way, but stretch/normal and baseline are also options. Stretch makes the items as long as the container, 
+        and baseline aligns all of the elements on the baseline, which is like the center but slightly different (this works better (maybe) with different sized items).
+        Finally, <b>align-content</b> works about the same as align-items but it aligns the flex lines instead of the items in the container (idk the difference).
+    </p> 
+    <p>
+        For the items in the flexbox, the <b>order</b> property defines what order the items in the div are displayed (defaults to the order defined), while the <b>flex-grow</b> and <b>flex-shrink</b> 
+        properties define how much a specific item will grow/shrink when the screen is resized compared to other items in the container. <b>Flex-basic</b> defines the base length of the item, and <b>flex</b>
+        shorthand for both that and flex-grow/shrink. Finally, <b>align-self</b> chooses an alignment method for the item, overriding the method chosen for the container.
+    </p>
+    <hr>
+
+    <h2 id="Responsive">Responsive Web Design</h2>
+    <p>Note: A lot of this is seen elsewhere throughout this, but its probably a good thing to repeat it here.</p>
+
+    <h3>Viewport</h3>
+    <p>At the beginning of an HTML document, you can create a meta element with the below information to define the viewport of the device. This allows you to get the size of the device 
+        you are using, so elements can be resized and rearranged according to responsive design. This includes when sizes are listed in percents, among (many) other things.</p>
+    <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>
+    <hr>
+
+    <h3>Making the Grid</h3>
+    <p>Probably the easiest way to place elements on a page is to set them up in a grid. This is done by defining the width of elements in 100/x% where x is the number of columns you want in your grid 
+        and making them all float left (i.e 100/3 &rAarr; 33.33% for 3 columns). Also add box-sizing: border-box to all elements so borders/padding don't mess up the width. Finally, you'd put any element(s) 
+        you want in a row into one div and make sure to enable clear:both to ensure that it doesn't break other elements. You can do this by defining classes for both columns that define things like 
+        width and float and row that define things like the clear. They could look like the following.
+    </p>
+    <pre>
+        <code>
+            .col-1 {width: 25%}
+            .col-2 {width: 50%}
+            ...
+
+            [class*="col-"] {
+                float: left;
+                [insert style]
+            }
+
+            .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+        </code>
+    </pre>
+    <hr>
+
+    <h3>Media Queries</h3>
+    <p>A media query asks a device about its display and sends this information to the webpage; it can then use this to change various CSS properties about the webpage. A popular example of a media 
+        query with grid-based design would be to decrease the number of columns for smaller devices, by making the width for all column classes 100%. Alternativly, you can design for mobile first,
+        and make the breakpoint for large devices to split into more columns, which will make your webpage load faster on mobile devices. A list of common breakpoint for device sizes is shown below.
+    </p>
+    <ul>
+        <li>600 px: extra small devices (phones)</li>
+        <li>768 px: Larger (newer) Phones</li>
+        <li>992px: Tablets</li>
+        <li>1200px: Older Laptops and PCs (below 720p)</li>
+        <li>(orientation: landscape): not a breakpoint, but will tell you if the device is a phone / vertical monitor.</li>
+    </ul>
+    <hr>
+
+    <h3>Notes on Images</h3>
+    <ul>
+        <li>If width is set to a percentage and height is auto, it will scale automatically, while keeping its native aspect ratio.</li>
+        <li>If max-width is used instead of width, the image will scale down as needed, but won't get any larger than its base size.</li>
+        <li>Note: both of these tips also apply to videos native on the page (not API).</li>
+        <li>For background images, if background-size is contain, the image will behave more similar to a img element (but still be in the background)</li>
+        <li>If background-size is 100% 100%, it will stretch to fill the area, will if it's set to cover, it will fill the area, but keep the ascept ratio, so parts of the image will be cropped out.</li>
+        <li>Remember that you can use media queries or the picture element to change photos used for different sized screens.</li>
+    </ul>
+    <hr>
+
+    <h3>Frameworks</h3>
+    <p>Utilizng a framework can make creating respeonsive webpage a lot easier. These include things like Bootstrap. You can also just download free templates for websites with stylesheets online, but 
+        that's not a paticularly good way to learn.
+    </p>
+    <hr>
+
+    <h3>Grid Properties</h3>
+    <p>Alternativly to the method mentioned earlier, you can make a display: grid container in the same way as the flexbox containers. This allows you to use certain grid properties that can be used to 
+        define rows and columns in a more streamlined way than what was described above. The <b>grid-template-columns</b> and rows properties define how many rows and columns are going to be in an element. 
+        You can give a specfic size, or use auto for each column to the width evenly between columns. <b>Gap</b> can define the padding between columns and rows (2 values), while <b>justify-content</b> and 
+        <b>allign-content</b> are used to horizonally and vertically align the content in the grid. Possible values for those two values are spac-evenly, space-around, space-between, and start and end. 
+        These are defined better with the flexbox explanation.
+    </p>
+    <p>The following properties go on the items in the grid rather than the grid container. <b>Grid-column</b> and <b>grid-row</b> define what column/row to place and element in and what column/row it 
+        starts at (1 / 3) or how many columns/row it takes up (1 / span 2). Alternativly, you can make a <b>grid-template-area</b> in the container that defines named areas that can then be called with the 
+        <b>grid-area</b> property.
+    </p>
+    <hr>
+
+
+</body>
+</html>
