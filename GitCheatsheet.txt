@@ -11,13 +11,15 @@ How to make a repo:
 
 How to commit changes:
 
-git commit -m "message" saves a version of what you're working on.
+1) "git add" all of the files you've changed and want to stage for the commit.
+2) git commit -m "message" saves a version of what you're working on.
 Make sure to leave a message with -m every time to make sure you don't forget what changed.
 
 Git branches:
 
 A branch is an alternate version of a repo that braches from the base repo.
 These are used to make changes without disturbing the main project.
+You can use branch -a to see all branches in the repo
 
 To creat a branch you use git branch $BRANCH_NAME and git checkout $BRANCH_NAME to switch between branches.
 Note that the base version of your repo is the master branch (git checkout master).
@@ -30,5 +32,67 @@ Once you are ready to merge two branches together (a side branch and the master 
 2) Use git merge $SECOND_BRANCH_NAME to merge the two branches together (there can be issues with this)
 3) Use git branch -d $SECOND_BRANCH_NAME to delete the branch that was merged if you don't need it anymore.
 
-The issues with merge arise if both changed the same file. To fix this, you edit the file on the branch you 
+The issue with merge arises if both branches changed the same file. To fix this, you edit the file on the branch you 
 want to be merged and then commit those changes.
+
+Revert and Reset:
+
+If you mess up a commit and need to revert the commit to an earlier one, you:
+1) Do git log --oneline to see the hash and commit message of your commits to find one you want to revert to
+2) Doing git revert HEAD --no-edit will revert the last commit while revert HEAD~x would go back x+1 updates.
+
+If you want to reset the repo instead (leaves no record of undone commits) you can do git reset $HASH
+where $HASH is the commit hash from git log. You can also reset the reset to get the records of the commit back.
+
+Git Amend
+
+If you need to make a small change to a commit, you can use amend to edit the last commit.
+A common use case is to edit the commit message (git commit --amend -m "new message"). 
+You can also add files if you add first and then amend.
+
+Github:
+
+Linking a local repo with Github:
+
+1) Create a repo on Github; this will give you a $LINK.
+2) Run git remote add origin $LINK. You'll need to put in your username and personal access token
+(You make one in setting -> developer setting on Github)
+
+Git pull:
+
+Git pull ($BRANCH_NAME)
+A pull combines git fetch and git merge which 1) finds what's different between your branch and the origin/master branch, 
+and 2) merges this with your current branch.
+
+Git push:
+
+Git push ($BRANCH_NAME)
+Sends your commited changes up to the origin/master branch.
+
+Branches on Github:
+With Github, you can create a new branch by hitting the branch select and typing in the name of a new branch.
+If you git pull on your local git, you can get a list of branches that are in the repo and you can checkout one of those branches and git pull to get everything from it.
+To push a branch so it goes into Github, you commit your changes and then run git push origin $BRANCH_NAME.
+You can then create a pull request, which will send your changes to be approved and be merged into the main branch
+(If it's your repo, you do that part).
+
+Forking a Repo:
+A fork is a clone of someone else's repo so you can add/change your code in it and suggest changes to the original
+(I'm pretty sure you can't make a branch in someone else's repo).
+
+To make a fork that you can edit, you do the following:
+1) Go the the repo and hit the fork button. Also hit the code and copy the $LINK for reference
+2) Use git clone $LINK to make a clone of the repo on your computer
+3) Check to see if everything is there then rename the origin branch to something else (ex. git remote rename origin upstream)
+4) Get the $LINK_FORK from your fork of the repo and add that as origin (git remote add origin $LINK_FORK)
+
+.gitIgnore:
+
+The .gitIgnore file in your repo defines which files on your computer are not added to the repo when you git add -all. 
+Typically, you'd do this for .log files or files in a tmp directory. This would be formatted like 
+#Ignores .log files
+*.log
+#Ignores tmp directories
+tmp/
+#Ignores a private file
+secretData.txt
