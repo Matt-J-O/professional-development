@@ -11,7 +11,8 @@ How to make a repo:
 
 How to commit changes:
 
-git commit -m "message" saves a version of what you're working on.
+1) "git add" all of the files you've changed and want to stage for the commit.
+2) git commit -m "message" saves a version of what you're working on.
 Make sure to leave a message with -m every time to make sure you don't forget what changed.
 
 Git branches:
