@@ -26,3 +26,23 @@ li a {
 li a:hover {
     background-color: #222222;
 }
+
+.current a {
+    background-color: #e11313;
+}
+
+.current a:hover {
+    background-color: #e11313;
+}
+
+h1 {
+    padding-left: 20%;
+    padding-right: 20%;
+    font-size: 2.5em;
+}
+
+p {
+    padding-left: 20%;
+    padding-right: 20%;
+    font-size: 1.5em;
+}
