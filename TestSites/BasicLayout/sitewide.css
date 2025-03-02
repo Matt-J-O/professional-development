@@ -41,6 +41,12 @@ h1 {
     font-size: 2.5em;
 }
 
+h3 {
+    padding-left: 20%;
+    padding-right: 20%;
+    font-size: 2em;
+}
+
 p {
     padding-left: 20%;
     padding-right: 20%;
