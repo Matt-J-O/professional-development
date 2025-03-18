@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>HTML Cheatsheet</title>
+    <link rel="stylesheet" href="cheatsheet.css">
+    <link rel="icon" type="image/x-icon" href="https://static.wikia.nocookie.net/wizardoflegend_gamepedia_en/images/b/b1/Prestigious_Diploma.png/revision/latest?cb=20190324002713">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Matthew Owen">
+
+<body>
+    
+<h1>React Cheatsheet</h1>
+<p>A little guide about how React works</p>
+<hr>
+
+<h2>React Basic</h2>
+<p>Below are a list of basic syntax and formatting of how a React file works.</p>
+<ul>
+    <li>In React, you work by defining functions that contain componet(s), you define one function with export default to be the main function to be ran to load the page.</li>
+    <li>A function, by default, can return only one HTML element, but a block surrounded by &lt;&gt; allows for a function to return a set of elements, or other functions can be called by a function that will return their own elements.</li>
+    <li>To call a function, you do &lt;FunctionName field = {value} /&gt;. Note that functions have to start with an uppercase (Ex. Profile not profile).</li>
+    <li>To write cleaner code, you can import componets (functions) from other files like "import FunctionName from 'file_location';" (Ex. import Gallery from "./Gallery.js";).</li>
+    <li>Note with importing functions, you can only import functions with the export keyword, and if its not the main function it needs to be in { these }.</li>
+    <li>There are some small extra rules for JSX (the HTML in React), like every tag needing to be closed, but you can also you a <a href="https://transform.tools/html-to-jsx" target="_blank">converter like this</a> to do it for you.</li>
+</ul>
+<hr>
+
+<h2>Variable Basics</h2>
+<p>With React, you can declare a variable in ways like Javascript (let name, etc.) or you can declare a variable like "const [winner, setWinner] = useState(null);". Note that this requires useState to be imported from React.
+    This example creates a variable winner with value null, and a function setWinner(value) that changes the value of winner to value. To use a variable in an HTML element, it has to go in {brackets}.
+    You also have to do this for any non-string value (tutorials lead me to believe that {100} and 100 would lead to differnet values).
+</p>
+<p>You can also declare an object inline in an HTML element, which is normally inclosed in {brackets}, so you'd need to use double {{brackets}}, this is useful for changing the CSS of an element.</p>
+<hr>
+
+<h2>Functions</h2>
+<p>Functions in React can serve two purposes, they either define elements to display on the page like HTML or providing some kind of functionality, and the later functions are nested in the former.
+    Element inputs define their inputs like FunctionName({ name, size }) and would be called like &lt;FunctionName name = {name} size = {size} /&gt;.
+    Interactive functions, on the other hand, are called and defined like Javascript functions. They are defined inside of the element function in which they need to be used (like defining a onclick function for a element).
+    Note that with using functions in the inputs to a element function, you might need to define it like this {() =&gt; functionName(name, size)} cause it can cause an infinite loop if you don't sometimes (I don't 100% remember).
+</p>
+
+<h2>Better Lists</h2>
+<p>To make a basic list, you would wrap li elements in a ul tag, but with Javascript/React you can make them a bit more reactive (haha). You can make an array of objects and then use a map function to make a list of li elements using 
+    data.map(data => &lt;li&gt;{dataField}&lt;/li&gt;). Additionally, you could use the filter function before you map to only keep elements in data that meet a specific criteria (data.filter(data => data.language === 'English')).
+    This allows you to make a list that can update dymanically. This is something that you could also do with incoming data from something like a SQL query, but you'd probably just do this kind of sorting in the query instead, but you have the option.
+</p>
+<p>Note that to avoid an error (it doesn't break anything, but it's a little annoying), you need to give each of your li element a key. That key can be from some id that's in each object, or a randomly generated number.</p>
+
+</body>
+</html>
