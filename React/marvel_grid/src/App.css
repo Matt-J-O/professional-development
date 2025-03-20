@@ -1,0 +1,73 @@
+html {
+  height: 100vh;
+  width: 100%;
+  margin: 0px;
+}
+
+body {
+  background-color: black;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.logo {
+  position: absolute;
+  top: 0%;
+  left: 42.5%;
+  width: 15%;
+}
+
+.flexContainer{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: row;
+}
+
+.imgDiv {
+  display: flex;
+  height: 100vh;
+  width: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  background-position: center center;
+}
+
+.txtDiv {
+  background-color: #ffffff66;
+  text-align: center;
+  width: 33.3333%;
+  margin: auto;
+  padding: 2%;
+}
+
+.label {
+  font-size: 150%;
+}
+
+.scorebox {
+  background-color: aliceblue;
+  font-size: 125%;
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  padding-right: 2%;
+  padding-left: 1%;
+
+}
+
+@media only screen and (orientation: portrait){
+  .imgDiv {
+    height: 50vh;
+    width: 100%;
+  }
+
+  .flexContainer{
+    flex-direction: column;
+  }
+
+  .logo{
+    left: 40%;
+    width: 20%;
+  }
+}

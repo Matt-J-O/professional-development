@@ -1,0 +1,602 @@
+[
+  {
+    "name": "Batman",
+    "apperances": 24305,
+    "img": "https://comicvine.gamespot.com/a/uploads/scale_super/11174/111743204/9646079-nikolasdraper-ivey%2Cabsolutebatman%235.jpg",
+    "id": 0
+  },
+  {
+    "name": "Superman",
+    "apperances": 19350,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/12/124259/9609837-ezgif-3-9d140bafe3.jpg",
+    "id": 1
+  },
+  {
+    "name": "Spider-Man",
+    "apperances": 17612,
+    "img": "https://comicvine.gamespot.com/a/uploads/square_medium/1/15776/9385573-eminen-spidey.jpg",
+    "id": 2
+  },
+  {
+    "name": "Wolverine",
+    "apperances": 16487,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11174/111743204/9383942-xlivesofwolverine%231joshuacassara.jpg",
+    "id": 3
+  },
+  {
+    "name": "Captain America",
+    "apperances": 11973,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11174/111743204/9631860-ultimates%232%2Cvol.4terrydodson.jpg",
+    "id": 4
+  },
+  {
+    "name": "Iron Man",
+    "apperances": 11452,
+    "img": "https://comicvine.gamespot.com/a/uploads/scale_small/12/124259/8654427-ezgif-1-2f113089e4.jpg",
+    "id": 5
+  },
+  {
+    "name": "Cyclops",
+    "apperances": 11445,
+    "img": "https://comicvine.gamespot.com/a/uploads/scale_super/11174/111743204/9364871-cyclopsvalentinesmith.jpg",
+    "id": 6
+  },
+  {
+    "name": "Storm",
+    "apperances": 10403,
+    "img": "https://comicvine.gamespot.com/a/uploads/scale_super/1/15776/9660377-storm1.jpg",
+    "id": 7
+  },
+  {
+    "name": "Beast",
+    "apperances": 9824,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/12/124259/8864892-14.jpg",
+    "id": 8
+  },
+  {
+    "name": "Dick Grayson (Nightwing)",
+    "apperances": 9823,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/1/18154/9337724-0645302321-latest.jpg",
+    "id": 9
+  },
+  {
+    "name": "Wonder Woman",
+    "apperances": 9087,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11124/111240963/9479546-screenshot2024-09-14152149.png",
+    "id": 10
+  },
+  {
+    "name": "Thor",
+    "apperances": 8791,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11184/111843102/9520871-thor.jpg",
+    "id": 11
+  },
+  {
+    "name": "Jena Grey",
+    "apperances": 8195,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/1/14487/9628621-img_3034.jpeg",
+    "id": 12
+  },
+  {
+    "name": "Iceman",
+    "apperances": 8138,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/12/124259/9094219-12.jpg",
+    "id": 13
+  },
+  {
+    "name": "Thing",
+    "apperances": 8133,
+    "img": "https://comicvine.gamespot.com/a/uploads/scale_super/12/124259/8112491-rco010_1468852144.jpg",
+    "id": 14
+  },
+  {
+    "name": "Hulk",
+    "apperances": 7944,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/1/15776/9605015-varcolac2.jpg",
+    "id": 15
+  },
+  {
+    "name": "Professor X",
+    "apperances": 7775,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11146/111464511/8243719-la-telepatia-5.jpg",
+    "id": 16
+  },
+  {
+    "name": "Colossus",
+    "apperances": 7742,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/6/68065/9352833-6487551300-GLSrmCPbcAAF38B.jpg",
+    "id": 17
+  },
+  {
+    "name": "Angel",
+    "apperances": 7531,
+    "img": "https://comicvine.gamespot.com/a/uploads/scale_small/1/14487/9451683-img_2119.jpeg",
+    "id": 18
+  },
+  {
+    "name": "Nightcrawler",
+    "apperances": 7329,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/12/124259/9550799-large-7642530.jpg",
+    "id": 19
+  },
+  {
+    "name": "Mr. Fantastic",
+    "apperances": 7003,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11174/111743204/8954179-fantastic.jpg",
+    "id": 20
+  },
+  {
+    "name": "Human Torch",
+    "apperances": 6971,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/5/57906/8180137-humantorch%287%29.jpg",
+    "id": 21
+  },
+  {
+    "name": "Rogue",
+    "apperances": 6750,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/6/68065/7758399-2845390588-13879.jpg",
+    "id": 22
+  },
+  {
+    "name": "Kitty Pryde",
+    "apperances": 6594,
+    "img": "https://comicvine.gamespot.com/a/uploads/scale_super/1/15776/9382128-kitty.jpg",
+    "id": 23
+  },
+  {
+    "name": "Lois Lane",
+    "apperances": 6559,
+    "img": "https://comicvine.gamespot.com/a/uploads/scale_super/11174/111743204/9646261-actioncomics%231086davidtalaski.jpg",
+    "id": 24
+  },
+  {
+    "name": "Emma Frost",
+    "apperances": 6292,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11174/111743204/8925171-emmafrost.jpg",
+    "id": 25
+  },
+  {
+    "name": "Invisible Woman",
+    "apperances": 6269,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11174/111743204/9640337-abraaolucas.jpg",
+    "id": 26
+  },
+  {
+    "name": "Magneto",
+    "apperances": 6020,
+    "img": "https://comicvine.gamespot.com/a/uploads/scale_super/11174/111743204/9372079-magnetobyuzuriart.jpg",
+    "id": 27
+  },
+  {
+    "name": "Alfred",
+    "apperances": 5802,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/14/147237/8384309-bdt13.jpg",
+    "id": 28
+  },
+  {
+    "name": "Hal Jordan",
+    "apperances": 5469,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/12/124259/9439462-green-lantern-16-main-cover-675x1024.jpg",
+    "id": 29
+  },
+  {
+    "name": "Commissioner James Gordon",
+    "apperances": 5466,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/12/124259/8294438-ezgif-6-51713ec051.jpg",
+    "id": 30
+  },
+  {
+    "name": "The Flash (Barry Allen)",
+    "apperances": 5283,
+    "img": "https://comicvine.gamespot.com/a/uploads/scale_super/1/15776/8933497-barry.jpg",
+    "id": 31
+  },
+  {
+    "name": "Doctor Strange",
+    "apperances": 5065,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11174/111743204/8925118-drstrange.jpg",
+    "id": 32
+  },
+  {
+    "name": "Namor",
+    "apperances": 5049,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11174/111743204/9172471-axejudgementday2tomreilly.jpg",
+    "id": 33
+  },
+  {
+    "name": "Hawkeye",
+    "apperances": 4905,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11156/111564182/9384867-thunderbolts_vol_4_1_trading_card_variant_textless.jpg",
+    "id": 34
+  },
+  {
+    "name": "Daredevil",
+    "apperances": 4858,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/12/124259/9092507-ezgif-3-78e2dace89.jpg",
+    "id": 35
+  },
+  {
+    "name": "Aquaman",
+    "apperances": 4782,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/12/124259/9609856-ezgif-3-c48330599a.jpg",
+    "id": 36
+  },
+  {
+    "name": "Gambit",
+    "apperances": 4781,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/12/124259/9658855-large-8721996.jpg",
+    "id": 37
+  },
+  {
+    "name": "Betsy Braddock (The Old Psylocke)",
+    "apperances": 4661,
+    "img": "https://comicvine.gamespot.com/a/uploads/scale_small/11144/111442876/9486651-x-force7regularcover.jpg",
+    "id": 38
+  },
+  {
+    "name": "Scarlet Witch",
+    "apperances": 4521,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11174/111743204/9364864-scarletwitch%235joshuaswaby.jpg",
+    "id": 39
+  },
+  {
+    "name": "Carol Danvers",
+    "apperances": 4521,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/12/124259/7866524-01.png",
+    "id": 40
+  },
+  {
+    "name": "Lex Luthor",
+    "apperances": 4489,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/6/68065/8009168-4360985566-E2K7wHnX0AI6wVF.jpg",
+    "id": 41
+  },
+  {
+    "name": "The Joker",
+    "apperances": 4450,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11183/111836101/9492583-61-5972.jpg",
+    "id": 42
+  },
+  {
+    "name": "Green Arrow",
+    "apperances": 4448,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11156/111564182/9486196-green-arrow-19-oto-gist.jpg",
+    "id": 43
+  },
+  {
+    "name": "Barbara Gordon (Batgirl, Oracle)",
+    "apperances": 4420,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/12/124259/8753882-ezgif-3-ec5c2fb125.jpg",
+    "id": 44
+  },
+  {
+    "name": "Nick Fury (The Old One)",
+    "apperances": 4340,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11174/111743204/9631877-bydavebullock%2Cultimates%2321%2Cvol.1.jpg",
+    "id": 45
+  },
+  {
+    "name": "Cannonball",
+    "apperances": 4226,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/12/124259/7817292-samuel_guthrie_%2528earth-616%2529_from_new_mutants_vol_4_2_001.jpg",
+    "id": 46
+  },
+  {
+    "name": "Jimmy Olsen",
+    "apperances": 3993,
+    "img": "https://comicvine.gamespot.com/a/uploads/scale_super/3/31666/4453116-sm_cv39_54b584ed32e725.28717882.jpg",
+    "id": 47
+  },
+  {
+    "name": "Doctor Doom",
+    "apperances": 3918,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/12/124259/9558822-large-1298115.jpg",
+    "id": 48
+  },
+  {
+    "name": "Mary Jane Watson",
+    "apperances": 3855,
+    "img": "https://comicvine.gamespot.com/a/uploads/scale_super/11170/111705043/9146791-parkers.jpg",
+    "id": 49
+  },
+  {
+    "name": "Black Widow",
+    "apperances": 3807,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11156/111564182/9646598-widow1.jpg",
+    "id": 50
+  },
+  {
+    "name": "Martin Manhunter",
+    "apperances": 3785,
+    "img": "https://comicvine.gamespot.com/a/uploads/scale_super/11174/111743204/9646127-amm%231%2Cjavierrodriguez.jpg",
+    "id": 51
+  },
+  {
+    "name": "Hank Pym (The OG Antman)",
+    "apperances": 3780,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11183/111836101/9498076-78-7806.jpg",
+    "id": 52
+  },
+  {
+    "name": "Havok",
+    "apperances": 3770,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/12/124259/9528964-large-7352827.jpg",
+    "id": 53
+  },
+  {
+    "name": "Vision",
+    "apperances": 3677,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/3/31666/4891380-vision2015002-lotayvar-fabb5.jpg",
+    "id": 54
+  },
+  {
+    "name": "Cable",
+    "apperances": 3674,
+    "img": "https://comicvine.gamespot.com/a/uploads/scale_super/1/15776/8923919-cable.jpg",
+    "id": 55
+  },
+  {
+    "name": "Sabretooth",
+    "apperances": 3633,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/12/124259/8197627-sabretooth_vol_4_1_textless.jpg",
+    "id": 56
+  },
+  {
+    "name": "Wasp",
+    "apperances": 3618,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11174/111743204/9631979-wasp.jpeg",
+    "id": 57
+  },
+  {
+    "name": "Catwoman",
+    "apperances": 3617,
+    "img": "https://comicvine.gamespot.com/a/uploads/scale_super/11174/111743204/9646085-catwoman%2373%2Cvol5mariannaignazzi.jpg",
+    "id": 58
+  },
+  {
+    "name": "Magik",
+    "apperances": 3534,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11161/111612243/9508695-5601289096-GZxjwSxWkAQmoOn.jpg",
+    "id": 59
+  },
+  {
+    "name": "Supergirl",
+    "apperances": 3523,
+    "img": "https://comicvine.gamespot.com/a/uploads/scale_super/11174/111743204/9646259-supergirl%231%2Cvol8joshuamiddleton.jpg",
+    "id": 60
+  },
+  {
+    "name": "Deadpool",
+    "apperances": 3497,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/12/124259/8703067-ezgif-1-4ba7f8ae4d.jpg",
+    "id": 61
+  },
+  {
+    "name": "Black Panther",
+    "apperances": 3479,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11174/111743204/9636127-ubp%2Cmateusmanhanini.jpg",
+    "id": 62
+  },
+  {
+    "name": "Time Drake (Red Robin)",
+    "apperances": 3460,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/1/14487/9380442-img_1743.jpeg",
+    "id": 63
+  },
+  {
+    "name": "Quicksilver",
+    "apperances": 3455,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/12/124259/9250882-ezgif-1-9183cabfe6.jpg",
+    "id": 64
+  },
+  {
+    "name": "Black Canary",
+    "apperances": 3435,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11141/111416886/9526173-449553456_1121504955625231_8522263178157458449_n.jpg",
+    "id": 65
+  },
+  {
+    "name": "J Jonah Jameson",
+    "apperances": 3398,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/5/57906/8132881-j.jonahjameson%283%29.jpg",
+    "id": 66
+  },
+  {
+    "name": "Mystique",
+    "apperances": 3339,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11114/111142376/6687430-mystique5.jpg",
+    "id": 67
+  },
+  {
+    "name": "She-Hulk",
+    "apperances": 3260,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11157/111571376/9488785-5540396625-she_h.jpg",
+    "id": 68
+  },
+  {
+    "name": "The Flash (Wally West)",
+    "apperances": 3253,
+    "img": "https://comicvine.gamespot.com/a/uploads/scale_super/11174/111743204/9646105-theflash%2319%2Cvol6stephensegovia.jpg",
+    "id": 69
+  },
+  {
+    "name": "Luke Cage",
+    "apperances": 3138,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/12/124259/7773026-rco001_1583481104.jpg",
+    "id": 70
+  },
+  {
+    "name": "Jubilee",
+    "apperances": 3120,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/12/124259/9492275-ezgif-4-34939b7b1d.jpg",
+    "id": 71
+  },
+  {
+    "name": "Cyborg",
+    "apperances": 3106,
+    "img": "https://comicvine.gamespot.com/a/uploads/scale_super/11142/111427220/8796970-cyborgnewlook.jpeg",
+    "id": 72
+  },
+  {
+    "name": "Bishop",
+    "apperances": 3048,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11156/111564182/9646582-timeslidebishopii.jpg",
+    "id": 73
+  },
+  {
+    "name": "Perry White",
+    "apperances": 3009,
+    "img": "https://comicvine.gamespot.com/a/uploads/scale_large/6/67663/8590342-7026365404-21147.jpg",
+    "id": 74
+  },
+  {
+    "name": "Sunspot",
+    "apperances": 2995,
+    "img": "https://comicvine.gamespot.com/a/uploads/scale_super/11174/111743204/9603916-x-menred%239%2Cvol2taurinclarke.jpg",
+    "id": 75
+  },
+  {
+    "name": "Rachel Summers",
+    "apperances": 2917,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/12/124259/9658846-large-4347927.jpg",
+    "id": 76
+  },
+  {
+    "name": "Punisher",
+    "apperances": 2911,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/12/124259/8745898-rco023_1670445148.jpg",
+    "id": 77
+  },
+  {
+    "name": "Aunt May",
+    "apperances": 2910,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11/117763/2674547-the_amazing_spider_man__37___page_2.jpg",
+    "id": 78
+  },
+  {
+    "name": "Polaris",
+    "apperances": 2890,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11183/111838909/9411711-tumblr_1f67807505c5a4f0e5720f4c53c93300_79473017_1280.jpg",
+    "id": 79
+  },
+  {
+    "name": "Venom",
+    "apperances": 2889,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/6/67663/6642044-07-variant.jpg",
+    "id": 80
+  },
+  {
+    "name": "Harley Quinn",
+    "apperances": 2780,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11156/111564182/9486191-harley-quinn-46-nakayama-spotlight-min.jpg",
+    "id": 81
+  },
+  {
+    "name": "Dazzler",
+    "apperances": 2736,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/1/14487/9485100-img_2241.jpeg",
+    "id": 82
+  },
+  {
+    "name": "Wolfsbane",
+    "apperances": 2642,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11124/111240963/9036169-8576335034-14ad8.jpg",
+    "id": 83
+  },
+  {
+    "name": "Norman Osborn (Green Goblin)",
+    "apperances": 2623,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/10/100647/4415394-3443916-supsm2013028_cvr_col.jpg",
+    "id": 84
+  },
+  {
+    "name": "Billy Batson (Shazam)",
+    "apperances": 2607,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/12/124259/9069382-large-2738258.jpg",
+    "id": 85
+  },
+  {
+    "name": "Sam Wilson",
+    "apperances": 2558,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/12/124259/9002289-rco022_1688282041.jpg",
+    "id": 86
+  },
+  {
+    "name": "Doctor Octopus",
+    "apperances": 2526,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/12/124259/8197629-vvtybp2a9ewuxn5ylxftof.jpg",
+    "id": 87
+  },
+  {
+    "name": "Moonstar",
+    "apperances": 2481,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11174/111743204/9651013-moonstar%2Cvincenzoriccardi.jpg",
+    "id": 88
+  },
+  {
+    "name": "Banshee",
+    "apperances": 2449,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11161/111612243/9586386-6125440593-32ba3.jpg",
+    "id": 89
+  },
+  {
+    "name": "X-23",
+    "apperances": 2443,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/1/14487/9367529-img_1648.jpeg",
+    "id": 90
+  },
+  {
+    "name": "Spider-Woman",
+    "apperances": 2440,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/1/15776/9604124-spider-woman1.jpg",
+    "id": 91
+  },
+  {
+    "name": "Silver Surfer",
+    "apperances": 2421,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11174/111743204/8925024-silversurfer.jpg",
+    "id": 92
+  },
+  {
+    "name": "Domino",
+    "apperances": 2413,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/9/96747/7126705-ahr0cdovl3d3dy5uzxdzyxjhbweuy29tl2ltywdlcy9plzawmc8ynjgvmta0l29yawdpbmfsl1gtrm9yy2vfmv9lywvsx05ndv9vbmtub3dux0npbwljc19db21py3nfrwxpdgvfyi5qcgc%3D.jpg",
+    "id": 93
+  },
+  {
+    "name": "Donna Troy",
+    "apperances": 2341,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11111/111113340/8912284-6148380269-7F5Rm.jpg",
+    "id": 94
+  },
+  {
+    "name": "Warpath",
+    "apperances": 2316,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/1/14487/8592240-3c259925-274d-400f-8ff6-7c451cd2c350.jpeg",
+    "id": 95
+  },
+  {
+    "name": "Iron Fist (Danny Rand)",
+    "apperances": 2287,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/11156/111564182/9408704-ironfist8.jpg",
+    "id": 96
+  },
+  {
+    "name": "Loki",
+    "apperances": 2267,
+    "img": "https://comicvine.gamespot.com/a/uploads/original/3/31666/3445123-lokiaoa2014001_cho_var.jpg",
+    "id": 97
+  },
+  {
+    "name": "Roy Harper (Arsenal, Red Arrow)",
+    "apperances": 2257,
+    "img": "https://comicvine.gamespot.com/a/uploads/scale_super/12/124259/9096468-ezgif-1-fbc9c39e1e.jpg",
+    "id": 98
+  },
+  {
+    "name": "Starfire",
+    "apperances": 2241,
+    "img": "https://comicvine.gamespot.com/a/uploads/scale_super/11161/111612243/8912348-9748240835-FuFtla2WAAIPrPd.jpg",
+    "id": 99
+  }
+]
