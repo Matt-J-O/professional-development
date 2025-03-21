@@ -3,6 +3,8 @@ import Score from './score.js';
 import Character from './character.js';
 import logo from './logo.png';
 import MetaTags from './metaTags.js';
+import LossPopup from './loss.js'
+import HelpPopup from './help.js';
 import {useEffect, useState} from 'react';
 
 import characterData from './database.json'
@@ -15,28 +17,39 @@ function App() {
   const [rightReveal, setRightReveal] = useState(false);
   const [lost, setLost] = useState(false);
   const [score, setScore] = useState(0);
+  const [help, setHelp] = useState(true);
 
-  function getNewCharacter() {
+  useEffect(() => {
+    let tmp_l = getNewCharacter();
+    setLeftCharacter(tmp_l);
+    let tmp_r = getNewCharacter(tmp_l.id);
+    setRightCharacter(tmp_r);
+    setIds([tmp_l.id, tmp_r.id]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+  
+  function getNewCharacter(other=-1) {
     let id = Math.floor(Math.random() * numCharacters);
-    while (ids.includes(id)) {
+    while (ids.includes(id) || id === other) {
       id = Math.floor(Math.random() * numCharacters);
     }
-    console.log(id)
-    console.log(characterData[id])
     return characterData[id]
   }
 
-  useEffect(() => {
-    setLeftCharacter(getNewCharacter())
-    setRightCharacter(getNewCharacter())
-    setIds([leftCharacter.id, rightCharacter.id])
-    console.log(leftCharacter)
-    console.log(rightCharacter)
-  }, [])
+  function restart() {
+    setScore(0);
+    let tmp_l = getNewCharacter();
+    setLeftCharacter(tmp_l);
+    let tmp_r = getNewCharacter(tmp_l.id);
+    setRightCharacter(tmp_r);
+    setIds([tmp_l.id, tmp_r.id]);
+    setRightReveal(false)
+    setLost(false);
+  }
 
-  function onguess(left, lost) {
+  function onguess(left) {
     //True == left side, False == right side ()
-    if (lost) {
+    if (lost || help) {
       return;
     }
     if (left) {
@@ -57,34 +70,40 @@ function App() {
     }
     setScore(score + 1);
     let tmp = getNewCharacter();
+    setIds([rightCharacter.id, tmp.id])
     setLeftCharacter(rightCharacter);
     setRightCharacter(tmp);
-    setIds([leftCharacter.id, rightCharacter.id])
   }
+
+  console.log(ids)
+  console.log(leftCharacter.id)
+  console.log(rightCharacter.id)
 
 
   return (
     <>
     <MetaTags />
 
-    <div className='flexContainer'>
+    {lost && <LossPopup score = {score} game_reset={() => restart()}/>}
+    {help && <HelpPopup  turn_off ={() => setHelp(false)}/>}
+    <div className='flexContainer' onClick={() => setHelp(false)}>
       <Character
       name = {leftCharacter.name}
       apperances={leftCharacter.apperances}
       img={leftCharacter.img}
       revealed={true}
-      onguess={() => onguess(true, lost)}
+      onguess={() => onguess(true)}
       />
       <Character
       name = {rightCharacter.name}
       apperances={rightCharacter.apperances}
       img={rightCharacter.img}
       revealed={rightReveal}
-      onguess={() => onguess(false, lost)}
+      onguess={() => onguess(false)}
       />
     </div>
     <Score score = {score}/>
-    <img className = "logo" src = {logo} alt=""></img>
+    <img className = "logo" src = {logo} alt="" onClick={() => setHelp(true)}></img>
     </>
   );
 }

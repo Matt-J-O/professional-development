@@ -1,0 +1,133 @@
+html {
+  height: 100vh;
+  width: 100%;
+  margin: 0px;
+}
+
+body {
+  background-color: black;
+  color: #EAE9FC;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}
+
+.logo {
+  position: absolute;
+  top: 0%;
+  left: 42.5%;
+  width: 15%;
+}
+
+.flexContainer{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: row;
+}
+
+.imgDiv {
+  display: flex;
+  height: 100vh;
+  width: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  background-position: center center;
+}
+
+.txtDiv {
+  background-color: #38383F99;
+  text-align: center;
+  width: 33.3333%;
+  margin: auto;
+  padding: 2%;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.txtDiv:hover {
+  background-color: #38383FAA;
+}
+
+.label {
+  font-size: 150%;
+  user-select: none;
+}
+
+.score {
+  user-select: none;
+}
+
+.scorebox {
+  background-color: #38383F99;
+  font-size: 125%;
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  padding-right: 2%;
+  padding-left: 1%;
+}
+
+.popup_loss {
+  position: absolute;
+  top: 37.5%;
+  left: 40%;
+  background-color: #38383F;
+  width: 20%;
+  min-height: 25vh;
+  text-align: center;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-size: 2vh;
+}
+
+.popup_help {
+  position: absolute;
+  top: 30%;
+  left: 29%;
+  background-color: #38383F;
+  width: 40%;
+  min-height: 40vh;
+  text-align: center;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-size: 2vh;
+  padding-right: 1%;
+}
+
+a {
+  color: #EAE9FC;
+}
+
+button {
+  width: 40%;
+  height: 30%;
+  font-size: 2.25vh;
+  color: #EAE9FC;
+  background-color: #414147;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #48484D;
+}
+
+ul {
+  list-style-type: none;
+}
+
+@media only screen and (orientation: portrait){
+  .imgDiv {
+    height: 50vh;
+    width: 100%;
+  }
+
+  .flexContainer{
+    flex-direction: column;
+  }
+
+  .logo{
+    left: 40%;
+    width: 20%;
+  }
+}

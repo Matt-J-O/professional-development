@@ -5,7 +5,7 @@ import './App.css';
 export default function Score({ score }) {
     return(
     <div className="scorebox">
-        <p>Score: {score}</p>
+        <p className='bold'><b>Score: {score}</b></p>
     </div>
     );
 }
